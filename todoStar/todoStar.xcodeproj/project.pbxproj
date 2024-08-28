@@ -54,14 +54,78 @@
 		BFC7F13C2C7EECB100EEA14F /* todoStar */ = {
 			isa = PBXGroup;
 			children = (
-				BFC7F13D2C7EECB100EEA14F /* AppDelegate.swift */,
-				BFC7F13F2C7EECB100EEA14F /* SceneDelegate.swift */,
-				BFC7F1412C7EECB100EEA14F /* ViewController.swift */,
+				BFC7F1512C7EEE7600EEA14F /* Sources */,
+				BFC7F1522C7EEE9900EEA14F /* Resources */,
 				BFC7F1462C7EECB300EEA14F /* Assets.xcassets */,
 				BFC7F1482C7EECB300EEA14F /* LaunchScreen.storyboard */,
 				BFC7F14B2C7EECB300EEA14F /* Info.plist */,
 			);
 			path = todoStar;
+			sourceTree = "<group>";
+		};
+		BFC7F1512C7EEE7600EEA14F /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				BFC7F1582C7EF01700EEA14F /* UI */,
+				BFC7F1562C7EEF9900EEA14F /* Models */,
+				BFC7F1552C7EEF3400EEA14F /* Modules */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		BFC7F1522C7EEE9900EEA14F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BFC7F1542C7EEEB000EEA14F /* Extensions */,
+				BFC7F1532C7EEEAA00EEA14F /* Fonts */,
+				BFC7F13F2C7EECB100EEA14F /* SceneDelegate.swift */,
+				BFC7F13D2C7EECB100EEA14F /* AppDelegate.swift */,
+				BFC7F1412C7EECB100EEA14F /* ViewController.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		BFC7F1532C7EEEAA00EEA14F /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		BFC7F1542C7EEEB000EEA14F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BFC7F1552C7EEF3400EEA14F /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				BFC7F1572C7EEFF200EEA14F /* SomeModules */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		BFC7F1562C7EEF9900EEA14F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BFC7F1572C7EEFF200EEA14F /* SomeModules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SomeModules;
+			sourceTree = "<group>";
+		};
+		BFC7F1582C7EF01700EEA14F /* UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
