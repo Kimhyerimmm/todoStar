@@ -20,8 +20,8 @@ func buttonConstraint(button: UIButton, in view: UIView) {
 }
 
 
-// MARK: 기본 버튼 스타일
-func defaultButtonActivationStyle(title: String) -> UIButton.Configuration {
+// MARK: 액션 버튼 스타일
+func buttonActivationDefaultStyle(title: String) -> UIButton.Configuration {
     // 기본 스타일
     var config = UIButton.Configuration.filled()
     config.title = title
@@ -37,7 +37,7 @@ func defaultButtonActivationStyle(title: String) -> UIButton.Configuration {
     return config
 }
 
-func defaultButtonDeactivationStyle(title: String) -> UIButton.Configuration {
+func buttonDeactivationDefaultStyle(title: String) -> UIButton.Configuration {
     // 기본 스타일
     var config = UIButton.Configuration.filled()
     config.title = title
@@ -53,8 +53,8 @@ func defaultButtonDeactivationStyle(title: String) -> UIButton.Configuration {
     return config
 }
 
-// MARK: 강조 버튼 스타일
-func primaryButtonStyle(title: String) -> UIButton.Configuration {
+// MARK: 강조 액션 버튼 스타일
+func buttonPrimaryStyle(title: String) -> UIButton.Configuration {
     // 기본 스타일
     var config = UIButton.Configuration.filled()
     config.title = title
@@ -70,7 +70,7 @@ func primaryButtonStyle(title: String) -> UIButton.Configuration {
     return config
 }
 
-func whiteButtonStyle(title: String) -> UIButton.Configuration {
+func buttonWhiteStyle(title: String) -> UIButton.Configuration {
     // 기본 스타일
     var config = UIButton.Configuration.filled()
     config.title = title
@@ -86,3 +86,4 @@ func whiteButtonStyle(title: String) -> UIButton.Configuration {
     return config
 }
 
+// TODO: 셀렉트 버튼 스타일
