@@ -16,8 +16,9 @@
 		BFC7F1702C7F0AB500EEA14F /* S-CoreDream-3Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = BFC7F16C2C7F0AB500EEA14F /* S-CoreDream-3Light.otf */; };
 		BFC7F1712C7F0AB500EEA14F /* S-CoreDream-4Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = BFC7F16D2C7F0AB500EEA14F /* S-CoreDream-4Regular.otf */; };
 		BFC7F1722C7F0AB500EEA14F /* S-CoreDream-5Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = BFC7F16E2C7F0AB500EEA14F /* S-CoreDream-5Medium.otf */; };
-		BFC7F1742C7F0ACB00EEA14F /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1732C7F0ACB00EEA14F /* UILabel+Extension.swift */; };
 		BFC7F1762C7F0FEE00EEA14F /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1752C7F0FEE00EEA14F /* UIImage+Extension.swift */; };
+		BFC7F1782C7F18ED00EEA14F /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1772C7F18ED00EEA14F /* ButtonStyle.swift */; };
+		BFC7F17A2C800CE500EEA14F /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1792C800CE500EEA14F /* UIFont+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,8 +33,9 @@
 		BFC7F16C2C7F0AB500EEA14F /* S-CoreDream-3Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "S-CoreDream-3Light.otf"; path = "../../../../../../Downloads/S-Core_Dream_OTF/S-CoreDream-3Light.otf"; sourceTree = "<group>"; };
 		BFC7F16D2C7F0AB500EEA14F /* S-CoreDream-4Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "S-CoreDream-4Regular.otf"; path = "../../../../../../Downloads/S-Core_Dream_OTF/S-CoreDream-4Regular.otf"; sourceTree = "<group>"; };
 		BFC7F16E2C7F0AB500EEA14F /* S-CoreDream-5Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "S-CoreDream-5Medium.otf"; path = "../../../../../../Downloads/S-Core_Dream_OTF/S-CoreDream-5Medium.otf"; sourceTree = "<group>"; };
-		BFC7F1732C7F0ACB00EEA14F /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		BFC7F1752C7F0FEE00EEA14F /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		BFC7F1772C7F18ED00EEA14F /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
+		BFC7F1792C800CE500EEA14F /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,8 +113,8 @@
 		BFC7F1542C7EEEB000EEA14F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				BFC7F1732C7F0ACB00EEA14F /* UILabel+Extension.swift */,
 				BFC7F1752C7F0FEE00EEA14F /* UIImage+Extension.swift */,
+				BFC7F1792C800CE500EEA14F /* UIFont+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -142,6 +144,7 @@
 		BFC7F1582C7EF01700EEA14F /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				BFC7F1772C7F18ED00EEA14F /* ButtonStyle.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -220,9 +223,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFC7F1742C7F0ACB00EEA14F /* UILabel+Extension.swift in Sources */,
+				BFC7F17A2C800CE500EEA14F /* UIFont+Extension.swift in Sources */,
 				BFC7F1422C7EECB100EEA14F /* ViewController.swift in Sources */,
 				BFC7F1762C7F0FEE00EEA14F /* UIImage+Extension.swift in Sources */,
+				BFC7F1782C7F18ED00EEA14F /* ButtonStyle.swift in Sources */,
 				BFC7F13E2C7EECB100EEA14F /* AppDelegate.swift in Sources */,
 				BFC7F1402C7EECB100EEA14F /* SceneDelegate.swift in Sources */,
 			);
