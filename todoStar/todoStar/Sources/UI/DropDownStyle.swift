@@ -11,49 +11,35 @@ class DropDownMenu: UIView, UITableViewDelegate, UITableViewDataSource {
     // MARK: - property
     // 드롭다운 데이터
     private let options: [String]
+    private let title: String
     private let dropDownAction: (String) -> Void
     
-    // 드롭다운 버튼
-    private let dropDownButton: UIButton = {
-        let button = UIButton()
-        var config = UIButton.Configuration.filled()
-        config.baseBackgroundColor = .natural90
-        config.baseForegroundColor = .white
-        config.background.cornerRadius = 10
-//        button.titleLabel?.font = UIFont.bodyMedium()
-//        button.backgroundColor = .natural90
-//        button.tintColor = .white
-//        button.layer.cornerRadius = 10
-//        button.contentHorizontalAlignment = .left
-        
-        var titleAttr = AttributedString("Select an option")
-            titleAttr.font = UIFont.bodyMedium() // 폰트 스타일 설정
-            titleAttr.foregroundColor = UIColor.white // 텍스트 색상 설정
-
-            config.attributedTitle = titleAttr
-        
-        button.configuration = config
-        
-        return button
-    }()
-    
-    // 드롭다운 테이블 뷰
-    private let dropDownMenuList: UITableView = {
-        let tableView = UITableView()
-        tableView.layer.cornerRadius = 10
-        tableView.isHidden = true
-        
-        return tableView
-    }()
+    private let dropDownButton: UIView
+    private let dropDownButtonTitle: UILabel
+    private let dropDownButtonIcon: UIImageView
+    private let dropDownMenuList: UITableView
     
     
     // MARK: - init
-    init(options: [String], dropDownAction: @escaping (String) -> Void) {
+    init(options: [String], title: String, dropDownAction: @escaping (String) -> Void) {
         self.options = options
+        self.title = title
         self.dropDownAction = dropDownAction
         
+        self.dropDownButton = UIView()
+        self.dropDownButtonTitle = UILabel()
+        self.dropDownButtonIcon = UIImageView()
+        self.dropDownMenuList = UITableView()
+        
         super.init(frame: .zero)
+        
+        dropDownButtonCreate()
+        dropDownMenuListCreate()
+        
         setUpView()
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(toggleDropDown))
+        dropDownButton.addGestureRecognizer(tapGesture)
     }
     
     required init?(coder: NSCoder) {
@@ -64,16 +50,7 @@ class DropDownMenu: UIView, UITableViewDelegate, UITableViewDataSource {
     
     // MARK: - view
     private func setUpView() {
-        // 버튼 기본 설정
-        dropDownButton.setTitle("선택해주세요.", for: .normal)
-        dropDownButton.addAction(UIAction { _ in
-            self.toggleDropDown()
-        }, for: .touchUpInside)
-        
-        
-        // 테이블 뷰 기본 설정
-        dropDownMenuList.delegate = self
-        dropDownMenuList.dataSource = self
+        // 뷰 붙이기
         addSubview(dropDownButton)
         addSubview(dropDownMenuList)
         
@@ -83,19 +60,19 @@ class DropDownMenu: UIView, UITableViewDelegate, UITableViewDataSource {
         
         NSLayoutConstraint.activate([
             // dropDownButton 레이아웃
-                    dropDownButton.leadingAnchor.constraint(equalTo: leadingAnchor),
-                    dropDownButton.trailingAnchor.constraint(equalTo: trailingAnchor),
-                    dropDownButton.topAnchor.constraint(equalTo: topAnchor),
-                    dropDownButton.heightAnchor.constraint(equalToConstant: 60),
-                    
-                    // dropDownMenuList 레이아웃
-                    dropDownMenuList.leadingAnchor.constraint(equalTo: leadingAnchor),
-                    dropDownMenuList.trailingAnchor.constraint(equalTo: trailingAnchor),
-                    dropDownMenuList.topAnchor.constraint(equalTo: dropDownButton.bottomAnchor),
-                    dropDownMenuList.heightAnchor.constraint(equalToConstant: 120)
+            dropDownButton.leadingAnchor.constraint(equalTo: leadingAnchor),
+            dropDownButton.trailingAnchor.constraint(equalTo: trailingAnchor),
+            dropDownButton.topAnchor.constraint(equalTo: topAnchor),
+            dropDownButton.heightAnchor.constraint(equalToConstant: 60),
+            
+            // dropDownMenuList 레이아웃
+            dropDownMenuList.leadingAnchor.constraint(equalTo: leadingAnchor),
+            dropDownMenuList.trailingAnchor.constraint(equalTo: trailingAnchor),
+            dropDownMenuList.topAnchor.constraint(equalTo: dropDownButton.bottomAnchor),
+            dropDownMenuList.heightAnchor.constraint(equalToConstant: 120)
         ])
     }
-
+    
     
     
     // MARK: - function
@@ -106,25 +83,92 @@ class DropDownMenu: UIView, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
         cell.textLabel?.text = options[indexPath.row]
+        cell.textLabel?.font = UIFont.bodyRegular()
+        cell.textLabel?.textColor = UIColor.white
+        cell.backgroundColor = UIColor.natural90
+        
+        let selectedBackGroundView = UIView()
+        selectedBackGroundView.backgroundColor = UIColor.natural70
+        cell.selectedBackgroundView = selectedBackGroundView
         
         return cell
     }
     
-    func updateDropDownButtonTitle(to title: String) {
-        UIView.animate(withDuration: 0.3) {
-            self.dropDownButton.setTitle(title, for: .normal)
-            self.layoutIfNeeded()
-        }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
     }
     
+    func updateDropDownButtonTitle(to title: String) {
+        dropDownButtonTitle.text = title
+    }
+    
+    
+    // 드롭다운 버튼
+    private func dropDownButtonCreate() {
+        let icon = UIImage(named: "down")
+        
+        dropDownButton.backgroundColor = UIColor.natural90
+        dropDownButton.layer.cornerRadius = 10
+        
+        dropDownButtonTitle.text = title
+        dropDownButtonTitle.font = UIFont.bodyMedium()
+        dropDownButtonTitle.textColor = UIColor.natural70
+        
+        dropDownButtonIcon.image = icon
+        
+        dropDownButtonTitle.translatesAutoresizingMaskIntoConstraints = false
+        dropDownButtonIcon.translatesAutoresizingMaskIntoConstraints = false
+        
+        dropDownButton.addSubview(dropDownButtonTitle)
+        dropDownButton.addSubview(dropDownButtonIcon)
+        
+        NSLayoutConstraint.activate([
+            dropDownButtonTitle.leadingAnchor.constraint(equalTo: dropDownButton.leadingAnchor, constant: 20),
+            dropDownButtonTitle.centerYAnchor.constraint(equalTo: dropDownButton.centerYAnchor),
+            dropDownButtonIcon.trailingAnchor.constraint(equalTo: dropDownButton.trailingAnchor, constant: -20),
+            dropDownButtonIcon.centerYAnchor.constraint(equalTo: dropDownButton.centerYAnchor)
+        ])
+    }
+    
+    // 드롭다운 테이블 뷰
+    private func dropDownMenuListCreate() {
+        dropDownMenuList.layer.cornerRadius = 10
+        dropDownMenuList.backgroundColor = UIColor.natural90
+        dropDownMenuList.isHidden = true
+        dropDownMenuList.delegate = self
+        dropDownMenuList.dataSource = self
+    }
+    
+    private func resetDropDownButoon() {
+        dropDownButtonIcon.image = UIImage(named: "down")
+        dropDownButton.backgroundColor = UIColor.natural90
+        dropDownButtonTitle.textColor = UIColor.white
+    }
+    
+    
     @objc private func toggleDropDown() {
-        dropDownMenuList.isHidden.toggle()
+        let isHidden = dropDownMenuList.isHidden
+        dropDownMenuList.isHidden = false
+        
+        let dropDownIcon = isHidden ? "up" : "down"
+        dropDownButtonIcon.image = UIImage(named: dropDownIcon)
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            self.dropDownMenuList.alpha = isHidden ? 1.0 : 0.0
+            self.dropDownButton.backgroundColor = isHidden ? UIColor.natural80 : UIColor.natural90
+            self.dropDownButtonTitle.textColor = isHidden ? UIColor.natural60 : UIColor.natural70
+        }, completion: { _ in
+            self.dropDownMenuList.isHidden = !isHidden
+        })
+        
     }
     
     // MARK: - delegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectOption = options[indexPath.row]
-        dropDownButton.setTitle(selectOption, for: .normal)
+        
+        updateDropDownButtonTitle(to: selectOption)
+        resetDropDownButoon()
         dropDownAction(selectOption)
         tableView.isHidden = true
     }
