@@ -8,14 +8,14 @@
 import UIKit
 
 // MARK: 버튼 사이즈 조절
-func buttonConstraint(button: UIButton, in view: UIView) {
+func buttonConstraint(button: UIButton, in view: UIView, height: CGFloat = 60) {
     button.translatesAutoresizingMaskIntoConstraints = false
     view.addSubview(button)
     
     NSLayoutConstraint.activate([
         button.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
         button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
-        button.heightAnchor.constraint(equalToConstant: 60)
+        button.heightAnchor.constraint(equalToConstant: height)
     ])
 }
 
@@ -86,4 +86,84 @@ func buttonWhiteStyle(title: String) -> UIButton.Configuration {
     return config
 }
 
-// TODO: 셀렉트 버튼 스타일
+// MARK: 셀렉트 버튼 스타일
+func selectButtonActivationStyle(title: String) -> UIButton.Configuration {
+    // 기본 스타일
+    var config = UIButton.Configuration.filled()
+    config.title = title
+    config.baseBackgroundColor = UIColor.primary100
+    config.baseForegroundColor = UIColor.white
+    config.background.cornerRadius = 10
+    
+    // 폰트 스타일
+    var titleStyle = AttributedString(title)
+    titleStyle.font = .bodyMedium()
+    config.attributedTitle = titleStyle
+    
+    return config
+}
+
+func selectButtonDeactivationStyle(title: String) -> UIButton.Configuration {
+    // 기본 스타일
+    var config = UIButton.Configuration.filled()
+    config.title = title
+    config.baseBackgroundColor = UIColor.natural90
+    config.baseForegroundColor = UIColor.natural40
+    config.background.cornerRadius = 10
+    
+    // 폰트 스타일
+    var titleStyle = AttributedString(title)
+    titleStyle.font = .bodyRegular()
+    config.attributedTitle = titleStyle
+
+    
+    return config
+}
+
+func selectButtonBigActivationStyle(title: String, subtitle: String) -> UIButton.Configuration {
+    // 기본 스타일
+    var config = UIButton.Configuration.filled()
+    config.title = title
+    config.subtitle = subtitle
+    config.baseBackgroundColor = UIColor.primary100
+    config.baseForegroundColor = UIColor.white
+    config.background.cornerRadius = 10
+    config.titleAlignment = .center
+    config.titlePadding = 3
+    
+    // 폰트 스타일
+    var titleStyle = AttributedString(title)
+    _ = AttributeContainer([
+        .font: UIFont.captionLight(),
+        .foregroundColor: UIColor.primary20
+    ])
+    titleStyle.font = .bodyMedium()
+    config.attributedTitle = titleStyle
+
+    
+    return config
+}
+
+func selectButtonBigDeactivationStyle(title: String, subtitle: String) -> UIButton.Configuration {
+    // 기본 스타일
+    var config = UIButton.Configuration.filled()
+    config.title = title
+    config.subtitle = subtitle
+    config.baseBackgroundColor = UIColor.natural90
+    config.baseForegroundColor = UIColor.natural40
+    config.background.cornerRadius = 10
+    config.titleAlignment = .center
+    config.titlePadding = 3
+    
+    // 폰트 스타일
+    var titleStyle = AttributedString(title)
+    _ = AttributeContainer([
+        .font: UIFont.captionLight(),
+        .foregroundColor: UIColor.natural60
+    ])
+    titleStyle.font = .bodyRegular()
+    config.attributedTitle = titleStyle
+
+    
+    return config
+}
