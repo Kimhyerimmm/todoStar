@@ -1,19 +1,17 @@
 //
-//  ViewController.swift
+//  RecordMainViewController.swift
 //  todoStar
 //
-//  Created by 김혜림 on 8/28/24.
+//  Created by 김혜림 on 9/1/24.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
-    
+class RecordMainViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
-    }
-    
-}
 
+        // Do any additional setup after loading the view.
+    }
+}
