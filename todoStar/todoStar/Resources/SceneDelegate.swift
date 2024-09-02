@@ -19,6 +19,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         window?.backgroundColor = UIColor.natural100
         
+        // TODO: 네비게이션 바 스타일 변경(아이콘 색상 변경 / 타이틀 빼기)
+        
+        
         // 네비게이션 컨트롤러 연결 및 스타일 설정
         let goalMainViewController = GoalMainViewController()
         let storageMainViewController = StorageMainViewController()

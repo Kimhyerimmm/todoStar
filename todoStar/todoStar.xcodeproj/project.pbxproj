@@ -32,6 +32,9 @@
 		BFC7F19D2C84AA7800EEA14F /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F19C2C84AA7800EEA14F /* UIView+Extension.swift */; };
 		BFC7F1A32C8574E300EEA14F /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1A22C8574E300EEA14F /* DataController.swift */; };
 		BFC7F1A52C8597C100EEA14F /* ShareData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1A42C8597C100EEA14F /* ShareData.swift */; };
+		BFC7F1A92C85B1AB00EEA14F /* UINavigationController+Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1A82C85B1AB00EEA14F /* UINavigationController+Extenstion.swift */; };
+		BFC7F1AB2C85B21100EEA14F /* NavigationBarStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1AA2C85B21100EEA14F /* NavigationBarStyle.swift */; };
+		BFC7F1AD2C85C03700EEA14F /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1AC2C85C03700EEA14F /* NotificationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +65,9 @@
 		BFC7F19C2C84AA7800EEA14F /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		BFC7F1A22C8574E300EEA14F /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		BFC7F1A42C8597C100EEA14F /* ShareData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareData.swift; sourceTree = "<group>"; };
+		BFC7F1A82C85B1AB00EEA14F /* UINavigationController+Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extenstion.swift"; sourceTree = "<group>"; };
+		BFC7F1AA2C85B21100EEA14F /* NavigationBarStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarStyle.swift; sourceTree = "<group>"; };
+		BFC7F1AC2C85C03700EEA14F /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +149,7 @@
 				BFC7F17D2C80572600EEA14F /* TextField+Extension.swift */,
 				BFC7F1812C8070AB00EEA14F /* UIViewController+Extension.swift */,
 				BFC7F19C2C84AA7800EEA14F /* UIView+Extension.swift */,
+				BFC7F1A82C85B1AB00EEA14F /* UINavigationController+Extenstion.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -173,6 +180,7 @@
 		BFC7F1572C7EEFF200EEA14F /* SomeModules */ = {
 			isa = PBXGroup;
 			children = (
+				BFC7F1AC2C85C03700EEA14F /* NotificationViewController.swift */,
 			);
 			path = SomeModules;
 			sourceTree = "<group>";
@@ -184,6 +192,7 @@
 				BFC7F17B2C802D0100EEA14F /* TextFieldStyle.swift */,
 				BFC7F1832C815DCA00EEA14F /* DropDownStyle.swift */,
 				BFC7F1852C834A7300EEA14F /* SegmentedControlStyle.swift */,
+				BFC7F1AA2C85B21100EEA14F /* NavigationBarStyle.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -306,12 +315,15 @@
 				BFC7F17A2C800CE500EEA14F /* UIFont+Extension.swift in Sources */,
 				BFC7F1422C7EECB100EEA14F /* GoalMainViewController.swift in Sources */,
 				BFC7F1962C84A1FB00EEA14F /* ReportMainViewController.swift in Sources */,
+				BFC7F1AB2C85B21100EEA14F /* NavigationBarStyle.swift in Sources */,
+				BFC7F1A92C85B1AB00EEA14F /* UINavigationController+Extenstion.swift in Sources */,
 				BFC7F1862C834A7300EEA14F /* SegmentedControlStyle.swift in Sources */,
 				BFC7F1762C7F0FEE00EEA14F /* UIImage+Extension.swift in Sources */,
 				BFC7F1912C849FE700EEA14F /* StorageMainViewController.swift in Sources */,
 				BFC7F19D2C84AA7800EEA14F /* UIView+Extension.swift in Sources */,
 				BFC7F18C2C84395B00EEA14F /* DataModel.swift in Sources */,
 				BFC7F1842C815DCA00EEA14F /* DropDownStyle.swift in Sources */,
+				BFC7F1AD2C85C03700EEA14F /* NotificationViewController.swift in Sources */,
 				BFC7F1782C7F18ED00EEA14F /* ButtonStyle.swift in Sources */,
 				BFC7F13E2C7EECB100EEA14F /* AppDelegate.swift in Sources */,
 				BFC7F17E2C80572600EEA14F /* TextField+Extension.swift in Sources */,
