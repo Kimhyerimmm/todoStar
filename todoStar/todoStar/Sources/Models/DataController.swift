@@ -32,7 +32,7 @@ class DBController {
         }
     }
     
-    // 데이터 삽입
+    // MARK: - 데이터 삽입
     func insertGoalData(data: GoalDataModelType) {
         if let context = self.context {
             context.insert(data)
@@ -54,7 +54,7 @@ class DBController {
         }
     }
     
-    // 데이터 불러오기
+    // MARK: - 데이터 불러오기
     func fetchGoalData(completion: @escaping ([GoalDataModelType]?, Error?) -> ()) {
         let descriptor = FetchDescriptor<GoalDataModelType>(
             sortBy: [
@@ -106,7 +106,7 @@ class DBController {
         }
     }
     
-    // 데이터 수정하기
+    // MARK: - 데이터 수정하기
     func updateGoalData(model: GoalDataModelType, data: GoalDataModelType) {
         let dataToBeUpdated = model
         dataToBeUpdated.goalId = data.goalId
@@ -137,7 +137,7 @@ class DBController {
         dataToBeUpdated.goalId = data.goalId
     }
     
-    // 데이터 삭제하기
+    // MARK: - 데이터 삭제하기
     func deleteGoalData(model: GoalDataModelType) {
         let dataToBeDeleted = model
         if let context = self.context {
@@ -145,7 +145,7 @@ class DBController {
         }
     }
     
-    func deleteAccompishmentData(model: AccomplishmentDataModelType) {
+    func deleteAccomplishmentData(model: AccomplishmentDataModelType) {
         let dataToBeDeleted = model
         if let context = self.context {
             context.delete(dataToBeDeleted)

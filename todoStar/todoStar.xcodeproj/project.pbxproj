@@ -31,6 +31,7 @@
 		BFC7F19B2C84A26C00EEA14F /* SettingMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F19A2C84A26C00EEA14F /* SettingMainViewController.swift */; };
 		BFC7F19D2C84AA7800EEA14F /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F19C2C84AA7800EEA14F /* UIView+Extension.swift */; };
 		BFC7F1A32C8574E300EEA14F /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1A22C8574E300EEA14F /* DataController.swift */; };
+		BFC7F1A52C8597C100EEA14F /* ShareData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1A42C8597C100EEA14F /* ShareData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		BFC7F19A2C84A26C00EEA14F /* SettingMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMainViewController.swift; sourceTree = "<group>"; };
 		BFC7F19C2C84AA7800EEA14F /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		BFC7F1A22C8574E300EEA14F /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		BFC7F1A42C8597C100EEA14F /* ShareData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 			children = (
 				BFC7F18B2C84395B00EEA14F /* DataModel.swift */,
 				BFC7F1A22C8574E300EEA14F /* DataController.swift */,
+				BFC7F1A42C8597C100EEA14F /* ShareData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				BFC7F1A32C8574E300EEA14F /* DataController.swift in Sources */,
 				BFC7F19B2C84A26C00EEA14F /* SettingMainViewController.swift in Sources */,
 				BFC7F1402C7EECB100EEA14F /* SceneDelegate.swift in Sources */,
+				BFC7F1A52C8597C100EEA14F /* ShareData.swift in Sources */,
 				BFC7F1932C84A00300EEA14F /* RecordMainViewController.swift in Sources */,
 				BFC7F17C2C802D0100EEA14F /* TextFieldStyle.swift in Sources */,
 			);
