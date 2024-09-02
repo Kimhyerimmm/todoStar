@@ -30,6 +30,7 @@
 		BFC7F1962C84A1FB00EEA14F /* ReportMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1952C84A1FB00EEA14F /* ReportMainViewController.swift */; };
 		BFC7F19B2C84A26C00EEA14F /* SettingMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F19A2C84A26C00EEA14F /* SettingMainViewController.swift */; };
 		BFC7F19D2C84AA7800EEA14F /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F19C2C84AA7800EEA14F /* UIView+Extension.swift */; };
+		BFC7F1A32C8574E300EEA14F /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1A22C8574E300EEA14F /* DataController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		BFC7F1952C84A1FB00EEA14F /* ReportMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportMainViewController.swift; sourceTree = "<group>"; };
 		BFC7F19A2C84A26C00EEA14F /* SettingMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMainViewController.swift; sourceTree = "<group>"; };
 		BFC7F19C2C84AA7800EEA14F /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		BFC7F1A22C8574E300EEA14F /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				BFC7F18B2C84395B00EEA14F /* DataModel.swift */,
+				BFC7F1A22C8574E300EEA14F /* DataController.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				BFC7F1782C7F18ED00EEA14F /* ButtonStyle.swift in Sources */,
 				BFC7F13E2C7EECB100EEA14F /* AppDelegate.swift in Sources */,
 				BFC7F17E2C80572600EEA14F /* TextField+Extension.swift in Sources */,
+				BFC7F1A32C8574E300EEA14F /* DataController.swift in Sources */,
 				BFC7F19B2C84A26C00EEA14F /* SettingMainViewController.swift in Sources */,
 				BFC7F1402C7EECB100EEA14F /* SceneDelegate.swift in Sources */,
 				BFC7F1932C84A00300EEA14F /* RecordMainViewController.swift in Sources */,
