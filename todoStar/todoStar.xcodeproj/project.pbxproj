@@ -35,6 +35,8 @@
 		BFC7F1A92C85B1AB00EEA14F /* UINavigationController+Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1A82C85B1AB00EEA14F /* UINavigationController+Extenstion.swift */; };
 		BFC7F1AB2C85B21100EEA14F /* NavigationBarStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1AA2C85B21100EEA14F /* NavigationBarStyle.swift */; };
 		BFC7F1AD2C85C03700EEA14F /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1AC2C85C03700EEA14F /* NotificationViewController.swift */; };
+		BFC7F1AF2C869C3A00EEA14F /* GoalMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1AE2C869C3A00EEA14F /* GoalMainView.swift */; };
+		BFC7F1B12C869C7300EEA14F /* GoalMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1B02C869C7300EEA14F /* GoalMainViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +70,8 @@
 		BFC7F1A82C85B1AB00EEA14F /* UINavigationController+Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extenstion.swift"; sourceTree = "<group>"; };
 		BFC7F1AA2C85B21100EEA14F /* NavigationBarStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarStyle.swift; sourceTree = "<group>"; };
 		BFC7F1AC2C85C03700EEA14F /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		BFC7F1AE2C869C3A00EEA14F /* GoalMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalMainView.swift; sourceTree = "<group>"; };
+		BFC7F1B02C869C7300EEA14F /* GoalMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalMainViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +205,8 @@
 			isa = PBXGroup;
 			children = (
 				BFC7F1412C7EECB100EEA14F /* GoalMainViewController.swift */,
+				BFC7F1AE2C869C3A00EEA14F /* GoalMainView.swift */,
+				BFC7F1B02C869C7300EEA14F /* GoalMainViewModel.swift */,
 			);
 			path = Goal;
 			sourceTree = "<group>";
@@ -318,6 +324,7 @@
 				BFC7F1AB2C85B21100EEA14F /* NavigationBarStyle.swift in Sources */,
 				BFC7F1A92C85B1AB00EEA14F /* UINavigationController+Extenstion.swift in Sources */,
 				BFC7F1862C834A7300EEA14F /* SegmentedControlStyle.swift in Sources */,
+				BFC7F1AF2C869C3A00EEA14F /* GoalMainView.swift in Sources */,
 				BFC7F1762C7F0FEE00EEA14F /* UIImage+Extension.swift in Sources */,
 				BFC7F1912C849FE700EEA14F /* StorageMainViewController.swift in Sources */,
 				BFC7F19D2C84AA7800EEA14F /* UIView+Extension.swift in Sources */,
@@ -332,6 +339,7 @@
 				BFC7F1402C7EECB100EEA14F /* SceneDelegate.swift in Sources */,
 				BFC7F1A52C8597C100EEA14F /* ShareData.swift in Sources */,
 				BFC7F1932C84A00300EEA14F /* RecordMainViewController.swift in Sources */,
+				BFC7F1B12C869C7300EEA14F /* GoalMainViewModel.swift in Sources */,
 				BFC7F17C2C802D0100EEA14F /* TextFieldStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

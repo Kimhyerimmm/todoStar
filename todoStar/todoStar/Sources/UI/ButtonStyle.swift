@@ -167,3 +167,16 @@ func selectButtonBigDeactivationStyle(title: String, subtitle: String) -> UIButt
     
     return config
 }
+
+func textButtonStyle(title: String) -> UIButton.Configuration {
+    var config = UIButton.Configuration.plain()
+    config.title = title
+    config.baseForegroundColor = .natural40
+    
+    // 폰트 스타일
+    var titleStyle = AttributedString(title)
+    titleStyle.font = .bodySmallRegular()
+    config.attributedTitle = titleStyle
+    
+    return config
+}
