@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GoalMainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class GoalMainViewController: UIViewController {
     
     // MARK: - property
     let goalMainView = GoalMainView()
@@ -18,6 +18,11 @@ class GoalMainViewController: UIViewController, UITableViewDataSource, UITableVi
     
     
     // MARK: - Lifecycle
+    
+    override func loadView() {
+        self.view = goalMainView
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // MARK: - 네비게이션 바
@@ -37,15 +42,6 @@ class GoalMainViewController: UIViewController, UITableViewDataSource, UITableVi
             target: self,
             action: #selector(notificationButtonAction)
         )
-        
-        // MARK: - 뷰 추가
-        view.addSubview(goalMainView)
-        goalMainView.frame = view.bounds
-        
-        // 테이블뷰 연결
-        goalMainView.dailyTodoList().dataSource = self
-        goalMainView.dailyTodoList().delegate = self
-        goalMainView.dailyTodoList().register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
     
     
@@ -63,28 +59,10 @@ class GoalMainViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     // MARK: - Data Sources
-    // MARK: UITableViewDataSource
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return testOption.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = testOption[indexPath.row]
-        cell.backgroundColor = .white
-        
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 20
-    }
     
     
     // MARK: - Delegate
-    // MARK: UITableViewDelegate
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Selected item: \(testOption[indexPath.row])")
-    }
+
+    
 }
 

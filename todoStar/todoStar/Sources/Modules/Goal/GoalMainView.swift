@@ -7,39 +7,42 @@
 
 import UIKit
 
-class GoalMainView: UIView {
+class GoalMainView: UIView, UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
     
     // MARK: - Property
-    var dailyTodoTableView = UITableView()
-    
+    private let viewModel = GoalMainViewModel()
+    private var dailyTodoListView: UICollectionView!
     
     // MARK: - Lifecycle
     override init(frame: CGRect) {
         super.init(frame: frame)
-        dailyTodoTableView = dailyTodoList()
         setupView()
+        viewModel.loadCurrentGoal()
+        dailyTodoListView.reloadData()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        dailyTodoTableView = dailyTodoList()
         setupView()
+        viewModel.loadCurrentGoal()
+        dailyTodoListView.reloadData()
     }
     
     
     // MARK: - Setup Method
     private func setupView() {
+        setupDailyTodoListView()
+        
         let weeklyStatusView = weeklyStatusView()
-        let dailyTodoView = dailyTodoView()
-        let dailyTodoTableView = dailyTodoList()
+        let dailyTodoTitle = dailyTodoTitle()
         
         addSubview(weeklyStatusView)
-        addSubview(dailyTodoView)
-        addSubview(dailyTodoTableView)
+        addSubview(dailyTodoTitle)
+        addSubview(dailyTodoListView)
         
         weeklyStatusView.translatesAutoresizingMaskIntoConstraints = false
-        dailyTodoView.translatesAutoresizingMaskIntoConstraints = false
-        dailyTodoTableView.translatesAutoresizingMaskIntoConstraints = false
+        dailyTodoTitle.translatesAutoresizingMaskIntoConstraints = false
+        dailyTodoListView.translatesAutoresizingMaskIntoConstraints = false
         
         // MARK: 오토레이아웃(weekTodo)
         NSLayoutConstraint.activate([
@@ -51,16 +54,17 @@ class GoalMainView: UIView {
         
         // MARK: 오토레이아웃(dailyTodoView)
         NSLayoutConstraint.activate([
-            dailyTodoView.topAnchor.constraint(equalTo: weeklyStatusView.bottomAnchor, constant: 40),
-            dailyTodoView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 24),
-            dailyTodoView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -24)
+            dailyTodoTitle.topAnchor.constraint(equalTo: weeklyStatusView.bottomAnchor, constant: 40),
+            dailyTodoTitle.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 24),
+            dailyTodoTitle.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -24)
         ])
         
-        // MARK: 오토레이아웃(dailyTodoTableView)
+        // MARK: 오토레이아웃(dailyTodoListView)
         NSLayoutConstraint.activate([
-            dailyTodoTableView.topAnchor.constraint(equalTo: weeklyStatusView.bottomAnchor, constant: 100),
-            dailyTodoTableView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 24),
-            dailyTodoTableView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -24)
+            dailyTodoListView.topAnchor.constraint(equalTo: dailyTodoTitle.bottomAnchor, constant: 20),
+            dailyTodoListView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            dailyTodoListView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            dailyTodoListView.heightAnchor.constraint(equalToConstant: 343)
         ])
     }
     
@@ -126,14 +130,14 @@ class GoalMainView: UIView {
         let emotion = ""
         dailyGoal.image = UIImage(named: emotion)
         dailyGoal.backgroundColor = .natural80
-        dailyGoal.layer.cornerRadius = 17
+        dailyGoal.layer.cornerRadius = 20
         dailyGoal.clipsToBounds = true
         
         dailyGoal.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            dailyGoal.widthAnchor.constraint(equalToConstant: 34),
-            dailyGoal.heightAnchor.constraint(equalToConstant: 34),
+            dailyGoal.widthAnchor.constraint(equalToConstant: 40),
+            dailyGoal.heightAnchor.constraint(equalToConstant: 40),
         ])
         
         stackView.addArrangedSubview(dailyTitle)
@@ -143,20 +147,6 @@ class GoalMainView: UIView {
     }
     
     // MARK: 오늘 목표
-    func dailyTodoView() -> UIStackView {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.spacing = 20
-        
-        let title = dailyTodoTitle()
-        //let list = dailyTodoList()
-        
-        stackView.addArrangedSubview(title)
-        //stackView.addArrangedSubview(list)
-        
-        return stackView
-    }
-    
     func dailyTodoTitle() -> UIStackView {
         let stackView = UIStackView()
         stackView.axis = .horizontal
@@ -176,17 +166,34 @@ class GoalMainView: UIView {
         return stackView
     }
     
-    func dailyTodoList() -> UITableView {
-        let tableView = UITableView()
-        
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            tableView.heightAnchor.constraint(equalToConstant: 323)
-        ])
-        tableView.backgroundColor = .blue
-        
-        return tableView
+    private func setupDailyTodoListView() {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.itemSize = CGSize(width: 254.0, height: 343.0)
+        layout.minimumLineSpacing = 20.0
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 24, bottom: 0, right: 24)
+
+        dailyTodoListView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        dailyTodoListView.register(CurrentGoalListCellStyle.self, forCellWithReuseIdentifier: CurrentGoalListCellStyle.identifier)
+        dailyTodoListView.dataSource = self
+        dailyTodoListView.delegate = self
+        dailyTodoListView.showsHorizontalScrollIndicator = false
+        dailyTodoListView.backgroundColor = .clear
     }
     
+    // MARK: - UICollectionViewDataSource & UICollectionViewDelegate
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel.currentGoals.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CurrentGoalListCellStyle.identifier, for: indexPath) as! CurrentGoalListCellStyle
+        let model = viewModel.currentGoals[indexPath.item]
+        cell.config(with: model)
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 254.0, height: 343.0)
+    }
 }
