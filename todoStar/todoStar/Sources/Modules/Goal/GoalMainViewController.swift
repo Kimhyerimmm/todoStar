@@ -14,7 +14,6 @@ class GoalMainViewController: UIViewController {
     let goalMainViewModel = GoalMainViewModel()
     
     let dbController = DBController.shared
-    let testOption = ["테스트입니당", "테스트입니당", "테스트입니당"]
     
     
     // MARK: - Lifecycle

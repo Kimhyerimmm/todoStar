@@ -37,7 +37,7 @@
 		BFC7F1AD2C85C03700EEA14F /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1AC2C85C03700EEA14F /* NotificationViewController.swift */; };
 		BFC7F1AF2C869C3A00EEA14F /* GoalMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1AE2C869C3A00EEA14F /* GoalMainView.swift */; };
 		BFC7F1B12C869C7300EEA14F /* GoalMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1B02C869C7300EEA14F /* GoalMainViewModel.swift */; };
-		BFC7F1B32C87032A00EEA14F /* CurrentGoalListCellStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1B22C87032A00EEA14F /* CurrentGoalListCellStyle.swift */; };
+		BFC7F1B32C87032A00EEA14F /* CurrentGoalListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1B22C87032A00EEA14F /* CurrentGoalListCell.swift */; };
 		BFC7F1B52C87375400EEA14F /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1B42C87375400EEA14F /* UILabel+Extension.swift */; };
 /* End PBXBuildFile section */
 
@@ -74,7 +74,7 @@
 		BFC7F1AC2C85C03700EEA14F /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		BFC7F1AE2C869C3A00EEA14F /* GoalMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalMainView.swift; sourceTree = "<group>"; };
 		BFC7F1B02C869C7300EEA14F /* GoalMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalMainViewModel.swift; sourceTree = "<group>"; };
-		BFC7F1B22C87032A00EEA14F /* CurrentGoalListCellStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentGoalListCellStyle.swift; sourceTree = "<group>"; };
+		BFC7F1B22C87032A00EEA14F /* CurrentGoalListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentGoalListCell.swift; sourceTree = "<group>"; };
 		BFC7F1B42C87375400EEA14F /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -202,7 +202,6 @@
 				BFC7F1832C815DCA00EEA14F /* DropDownStyle.swift */,
 				BFC7F1852C834A7300EEA14F /* SegmentedControlStyle.swift */,
 				BFC7F1AA2C85B21100EEA14F /* NavigationBarStyle.swift */,
-				BFC7F1B22C87032A00EEA14F /* CurrentGoalListCellStyle.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -213,6 +212,7 @@
 				BFC7F1412C7EECB100EEA14F /* GoalMainViewController.swift */,
 				BFC7F1AE2C869C3A00EEA14F /* GoalMainView.swift */,
 				BFC7F1B02C869C7300EEA14F /* GoalMainViewModel.swift */,
+				BFC7F1B22C87032A00EEA14F /* CurrentGoalListCell.swift */,
 			);
 			path = Goal;
 			sourceTree = "<group>";
@@ -323,7 +323,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFC7F1B32C87032A00EEA14F /* CurrentGoalListCellStyle.swift in Sources */,
+				BFC7F1B32C87032A00EEA14F /* CurrentGoalListCell.swift in Sources */,
 				BFC7F1822C8070AB00EEA14F /* UIViewController+Extension.swift in Sources */,
 				BFC7F17A2C800CE500EEA14F /* UIFont+Extension.swift in Sources */,
 				BFC7F1422C7EECB100EEA14F /* GoalMainViewController.swift in Sources */,

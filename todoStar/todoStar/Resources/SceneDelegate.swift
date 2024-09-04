@@ -76,9 +76,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         navigationView.layer.shadowPath = UIBezierPath(rect: CGRect(x: -50, y: -20, width: (window?.bounds.width)!+100, height: (window?.bounds.height)!+100)).cgPath
         
         navigationView.translatesAutoresizingMaskIntoConstraints = false
+        window?.addSubview(navigationView)
         
         window?.rootViewController = tabBarController
-        window?.addSubview(navigationView)
         
         NSLayoutConstraint.activate([
             navigationView.bottomAnchor.constraint(equalTo: window!.safeAreaLayoutGuide.bottomAnchor),

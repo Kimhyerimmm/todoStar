@@ -6,11 +6,10 @@
 //
 
 import UIKit
+import SwiftData
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application xisAnchor:0x6000017700c0 \"UIView:0x111409460.top\"> and <NSLayoutYAxisAnchor:0x600001770340 \"todoStar.DropDownMenu:0x111409280.top\"> because they have no common ancestor.  Does the constraint or its anchors reference items in different view hierarchies?  That's illegal."launch.

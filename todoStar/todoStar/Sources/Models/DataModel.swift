@@ -9,25 +9,50 @@ import Foundation
 import SwiftData
 
 @Model
-class GoalRecordDataModel: Identifiable {
+class GoalRecordDataModel: Identifiable, CustomStringConvertible {
     var goalId: UUID
     var lastGoal: String
-    var middleGoal: String
-    var smallGoal: String
-    var goalPeriod: Int
+    var middleGoal: [MiddleGoalDataModel]
     var importance: String
     var reward: String
+    var progressStatus: Bool
     var createdDate: Date
-    
-    init(goalId: UUID, lastGoal: String, middleGoal: String, smallGoal: String, goalPeriod: Int, importance: String, reward: String, createdDate: Date) {
+
+    init(goalId: UUID, lastGoal: String, middleGoal: [MiddleGoalDataModel], importance: String, reward: String, progressStatus: Bool, createdDate: Date) {
         self.goalId = goalId
         self.lastGoal = lastGoal
         self.middleGoal = middleGoal
-        self.smallGoal = smallGoal
-        self.goalPeriod = goalPeriod
         self.importance = importance
         self.reward = reward
+        self.progressStatus = progressStatus
         self.createdDate = createdDate
+    }
+
+    var description: String {
+        return "GoalRecordDataModel\nlastGoal: \(lastGoal),\n middleGoal: \(middleGoal),\n middleGoalCount: \(middleGoal.count),\n importance: \(importance),\n reward: \(reward),\n progressStatus: \(progressStatus))"
+    }
+}
+
+@Model
+class MiddleGoalDataModel: Identifiable, CustomStringConvertible {
+    var middleGoalId: UUID
+    var middleGoal: String
+    var smallGoal: String
+    var goalPeriod: Int
+    var goalStatus: Int
+    var createdDate: Date
+
+    init(middleGoalId: UUID, middleGoal: String, smallGoal: String, goalPeriod: Int, goalStatus: Int, createdDate: Date) {
+        self.middleGoalId = middleGoalId
+        self.middleGoal = middleGoal
+        self.smallGoal = smallGoal
+        self.goalPeriod = goalPeriod
+        self.goalStatus = goalStatus
+        self.createdDate = createdDate
+    }
+
+    var description: String {
+        return "MiddleGoalDataModel\nmiddleGoal: \(middleGoal),\n smallGoal: \(smallGoal),\n goalPeriod: \(goalPeriod))"
     }
 }
 
