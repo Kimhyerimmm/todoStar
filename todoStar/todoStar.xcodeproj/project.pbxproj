@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF1CE6B22C88926E008AE7F7 /* GoalListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1CE6B12C88926E008AE7F7 /* GoalListViewController.swift */; };
+		BF1CE6B42C889280008AE7F7 /* GoalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1CE6B32C889280008AE7F7 /* GoalListView.swift */; };
+		BF1CE6B62C889296008AE7F7 /* GoalListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1CE6B52C889296008AE7F7 /* GoalListViewModel.swift */; };
 		BFC7F13E2C7EECB100EEA14F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F13D2C7EECB100EEA14F /* AppDelegate.swift */; };
 		BFC7F1402C7EECB100EEA14F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F13F2C7EECB100EEA14F /* SceneDelegate.swift */; };
 		BFC7F1422C7EECB100EEA14F /* GoalMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1412C7EECB100EEA14F /* GoalMainViewController.swift */; };
@@ -42,6 +45,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BF1CE6B12C88926E008AE7F7 /* GoalListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalListViewController.swift; sourceTree = "<group>"; };
+		BF1CE6B32C889280008AE7F7 /* GoalListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalListView.swift; sourceTree = "<group>"; };
+		BF1CE6B52C889296008AE7F7 /* GoalListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalListViewModel.swift; sourceTree = "<group>"; };
 		BFC7F13A2C7EECB100EEA14F /* todoStar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = todoStar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFC7F13D2C7EECB100EEA14F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFC7F13F2C7EECB100EEA14F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +95,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF1CE6AF2C889238008AE7F7 /* GoalMain */ = {
+			isa = PBXGroup;
+			children = (
+				BFC7F1412C7EECB100EEA14F /* GoalMainViewController.swift */,
+				BFC7F1AE2C869C3A00EEA14F /* GoalMainView.swift */,
+				BFC7F1B02C869C7300EEA14F /* GoalMainViewModel.swift */,
+				BFC7F1B22C87032A00EEA14F /* CurrentGoalListCell.swift */,
+			);
+			path = GoalMain;
+			sourceTree = "<group>";
+		};
+		BF1CE6B02C88924D008AE7F7 /* GoalList */ = {
+			isa = PBXGroup;
+			children = (
+				BF1CE6B12C88926E008AE7F7 /* GoalListViewController.swift */,
+				BF1CE6B32C889280008AE7F7 /* GoalListView.swift */,
+				BF1CE6B52C889296008AE7F7 /* GoalListViewModel.swift */,
+			);
+			path = GoalList;
+			sourceTree = "<group>";
+		};
 		BFC7F1312C7EECB100EEA14F = {
 			isa = PBXGroup;
 			children = (
@@ -209,10 +236,8 @@
 		BFC7F18D2C849EB100EEA14F /* Goal */ = {
 			isa = PBXGroup;
 			children = (
-				BFC7F1412C7EECB100EEA14F /* GoalMainViewController.swift */,
-				BFC7F1AE2C869C3A00EEA14F /* GoalMainView.swift */,
-				BFC7F1B02C869C7300EEA14F /* GoalMainViewModel.swift */,
-				BFC7F1B22C87032A00EEA14F /* CurrentGoalListCell.swift */,
+				BF1CE6B02C88924D008AE7F7 /* GoalList */,
+				BF1CE6AF2C889238008AE7F7 /* GoalMain */,
 			);
 			path = Goal;
 			sourceTree = "<group>";
@@ -337,13 +362,16 @@
 				BFC7F19D2C84AA7800EEA14F /* UIView+Extension.swift in Sources */,
 				BFC7F18C2C84395B00EEA14F /* DataModel.swift in Sources */,
 				BFC7F1842C815DCA00EEA14F /* DropDownStyle.swift in Sources */,
+				BF1CE6B62C889296008AE7F7 /* GoalListViewModel.swift in Sources */,
 				BFC7F1AD2C85C03700EEA14F /* NotificationViewController.swift in Sources */,
+				BF1CE6B42C889280008AE7F7 /* GoalListView.swift in Sources */,
 				BFC7F1782C7F18ED00EEA14F /* ButtonStyle.swift in Sources */,
 				BFC7F13E2C7EECB100EEA14F /* AppDelegate.swift in Sources */,
 				BFC7F17E2C80572600EEA14F /* TextField+Extension.swift in Sources */,
 				BFC7F1A32C8574E300EEA14F /* DataController.swift in Sources */,
 				BFC7F19B2C84A26C00EEA14F /* SettingMainViewController.swift in Sources */,
 				BFC7F1402C7EECB100EEA14F /* SceneDelegate.swift in Sources */,
+				BF1CE6B22C88926E008AE7F7 /* GoalListViewController.swift in Sources */,
 				BFC7F1A52C8597C100EEA14F /* ShareData.swift in Sources */,
 				BFC7F1932C84A00300EEA14F /* RecordMainViewController.swift in Sources */,
 				BFC7F1B12C869C7300EEA14F /* GoalMainViewModel.swift in Sources */,

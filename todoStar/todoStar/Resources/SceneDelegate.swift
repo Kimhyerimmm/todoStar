@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.backgroundColor = UIColor.natural100
         
         // TODO: 네비게이션 바 스타일 변경(아이콘 색상 변경 / 타이틀 빼기)
-        
+        UINavigationBar.appearance().tintColor = .white
         
         // 네비게이션 컨트롤러 연결 및 스타일 설정
         let goalMainViewController = GoalMainViewController()
@@ -29,12 +29,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let reportMainViewController = ReportMainViewController()
         let settingMainViewController = SettingMainViewController()
         
-        let firstNavigationController = UINavigationController(rootViewController: goalMainViewController)
-        let secondNavigationController = UINavigationController(rootViewController: storageMainViewController)
-        let thirdNavigationController = UINavigationController(rootViewController: recordMainViewController)
-        let fourthNavigationController = UINavigationController(rootViewController: reportMainViewController)
-        let fifthNavigationController = UINavigationController(rootViewController: settingMainViewController)
-        
+        let firstNavigationController = CustomNavigationController(rootViewController: goalMainViewController)
+        let secondNavigationController = CustomNavigationController(rootViewController: storageMainViewController)
+        let thirdNavigationController = CustomNavigationController(rootViewController: recordMainViewController)
+        let fourthNavigationController = CustomNavigationController(rootViewController: reportMainViewController)
+        let fifthNavigationController = CustomNavigationController(rootViewController: settingMainViewController)
+
         let thirdMainViewControllerIcon = UIView()
         thirdMainViewControllerIcon.frame = CGRect(x: 0, y: 0, width: 45, height: 38)
         thirdMainViewControllerIcon.backgroundColor = UIColor.primary100

@@ -9,19 +9,21 @@ import UIKit
 
 extension UINavigationController {
 
-    func setCustomNavigationBar(leftImage: String, leftAction: Selector, rightImage: String, rightAction: Selector, target: Any) {
+    func setCustomNavigationBar(leftImage: String, leftAction: UIAction, rightImage: String, rightAction: UIAction, target: Any) {
         if let viewController = self.topViewController {
-            viewController.navigationItem.leftBarButtonItem = CustomNavigationBar.setupLeftBarButton(
+            let leftBarButtonItems = CustomNavigationController.setupLeftBarButton(
                 withImage: leftImage,
                 target: target,
                 action: leftAction
             )
-            
-            viewController.navigationItem.rightBarButtonItem = CustomNavigationBar.setupRightBarButton(
-                withImage: rightImage,
+            viewController.navigationItem.leftBarButtonItems = leftBarButtonItems
+
+            let rightBarButtonItems = CustomNavigationController.setupLeftBarButton(
+                withImage: leftImage,
                 target: target,
-                action: rightAction
+                action: leftAction
             )
+            viewController.navigationItem.rightBarButtonItems = rightBarButtonItems
         }
     }
 }

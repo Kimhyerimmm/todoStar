@@ -56,7 +56,7 @@ class GoalMainViewModel {
                 )
             }
         }
-        
+
         // lastGoal 기준으로 그룹화
         let groupedByLastGoal = Dictionary(grouping: currentGoals, by: { $0.lastGoal })
 

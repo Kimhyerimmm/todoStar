@@ -7,8 +7,14 @@
 
 import UIKit
 
+protocol GoalMainViewDelegate: AnyObject {
+    func didTapMoreButton()
+}
+
 class GoalMainView: UIView, UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
-    
+
+    weak var delegate: GoalMainViewDelegate?
+
     // MARK: - Property
     private let viewModel = GoalMainViewModel()
     private var dailyTodoListView: UICollectionView!
@@ -170,7 +176,10 @@ class GoalMainView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
         
         let button = UIButton()
         button.configuration = textButtonStyle(title: "더보기")
-        
+        button.addAction(UIAction { _ in
+            self.delegate?.didTapMoreButton()
+        }, for: .touchUpInside)
+
         stackView.addArrangedSubview(title)
         stackView.addArrangedSubview(button)
         
