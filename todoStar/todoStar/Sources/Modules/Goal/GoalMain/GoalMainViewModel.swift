@@ -25,8 +25,6 @@ class GoalMainViewModel {
     
     init() {
         loadCurrentGoal()
-        print(currentGoals)
-        print(currentGoals.count)
     }
     
     func loadCurrentGoal() {

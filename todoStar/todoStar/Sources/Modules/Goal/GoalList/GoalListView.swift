@@ -9,12 +9,26 @@ import UIKit
 
 class GoalListView: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
+    // MARK: - Property
+    private let viewModel = GoalListViewModel()
 
+
+    // MARK: Life Cycle
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupView()
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setupView()
+    }
+    
+    // MARK: - Setup Method
+    func setupView() {
+
+    }
+
+
+    // MARK: - View
 }

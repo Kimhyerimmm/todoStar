@@ -5,4 +5,8 @@
 //  Created by 김혜림 on 9/4/24.
 //
 
-import Foundation
+import UIKit
+
+class GoalListViewModel {
+
+}

@@ -66,8 +66,8 @@ class GoalMainView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
         // MARK: 오토레이아웃(dailyTodoTitle)
         NSLayoutConstraint.activate([
             dailyTodoTitle.topAnchor.constraint(equalTo: weeklyStatusView.bottomAnchor, constant: 30),
-            dailyTodoTitle.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 24),
-            dailyTodoTitle.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -24)
+            dailyTodoTitle.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
+            dailyTodoTitle.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20)
         ])
         
         // MARK: 오토레이아웃(dailyTodoListView)
@@ -99,8 +99,8 @@ class GoalMainView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
         weeklyStatusView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            weeklyStatusView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
-            weeklyStatusView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
+            weeklyStatusView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            weeklyStatusView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             weeklyStatusView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30)
         ])
         
@@ -191,7 +191,7 @@ class GoalMainView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
         layout.scrollDirection = .horizontal
         layout.itemSize = CGSize(width: 254.0, height: 323.0)
         layout.minimumLineSpacing = 20.0
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 24, bottom: 0, right: 24)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
 
         dailyTodoListView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         dailyTodoListView.register(CurrentGoalListCell.self, forCellWithReuseIdentifier: CurrentGoalListCell.identifier)

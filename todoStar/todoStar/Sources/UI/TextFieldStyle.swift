@@ -17,8 +17,8 @@ func textFieldConstraint(textField: UITextField, in view: UIView) {
     view.addSubview(textField)
     
     NSLayoutConstraint.activate([
-        textField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
-        textField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
+        textField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+        textField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
         textField.heightAnchor.constraint(equalToConstant: 60)
     ])
 }

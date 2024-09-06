@@ -17,12 +17,12 @@ class CustomNavigationController: UINavigationController {
             backButton.setTitle("", for: .normal)
             backButton.setImage(UIImage(named: "back"), for: .normal)
             backButton.addAction(UIAction { _ in
-                self.popViewController(animated: true)
+                self.popViewController(animated: false)
             }, for: .touchUpInside)
 
             let backBarButtonItem = UIBarButtonItem(customView: backButton)
             let spaceItem = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
-            spaceItem.width = 20 // 여백 조정
+            spaceItem.width = 16 // 여백 조정
 
             viewController.navigationItem.leftBarButtonItems = [spaceItem, backBarButtonItem]
         }
@@ -35,7 +35,7 @@ class CustomNavigationController: UINavigationController {
 
         let buttonItem = UIBarButtonItem(customView: button)
         let spaceItem = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
-        spaceItem.width = 20
+        spaceItem.width = 16
 
         return [spaceItem, buttonItem]
     }
@@ -47,7 +47,7 @@ class CustomNavigationController: UINavigationController {
 
         let buttonItem = UIBarButtonItem(customView: button)
         let spaceItem = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
-        spaceItem.width = 20
+        spaceItem.width = 16
 
         return [spaceItem, buttonItem]
     }

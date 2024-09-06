@@ -9,11 +9,9 @@ import UIKit
 
 class GoalMainViewController: UIViewController, GoalMainViewDelegate {
     
-    // MARK: - property
+    // MARK: - Property
     let goalMainView = GoalMainView()
     let goalMainViewModel = GoalMainViewModel()
-    
-    let dbController = DBController.shared
     
     
     // MARK: - Lifecycle
@@ -34,9 +32,7 @@ class GoalMainViewController: UIViewController, GoalMainViewDelegate {
         // 델리게이트 연결
         goalMainView.delegate = self
 
-        // MARK: - 네비게이션 바
-        navigationItem.backButtonTitle = ""
-
+        // MARK: - Navigation Bar
         // 좌측 버튼 설정
         let leftBarButtonItem = CustomNavigationController.setupLeftBarButton(
             withImage: "logoSmall",
@@ -73,16 +69,6 @@ class GoalMainViewController: UIViewController, GoalMainViewDelegate {
     func didTapMoreButton() {
         let GoalListVC = GoalListViewController()
         self.navigationController?.pushViewController(GoalListVC, animated: false)
-    }
-
-    // MARK: Action Method
-
-
-    // MARK: - Data Sources
-    
-    
-    // MARK: - Delegate
-
-    
+    }    
 }
 

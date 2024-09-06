@@ -10,15 +10,15 @@
 		BF1CE6B22C88926E008AE7F7 /* GoalListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1CE6B12C88926E008AE7F7 /* GoalListViewController.swift */; };
 		BF1CE6B42C889280008AE7F7 /* GoalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1CE6B32C889280008AE7F7 /* GoalListView.swift */; };
 		BF1CE6B62C889296008AE7F7 /* GoalListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1CE6B52C889296008AE7F7 /* GoalListViewModel.swift */; };
+		BF1CE6BB2C8AA352008AE7F7 /* S-CoreDream-6Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BF1CE6B72C8AA352008AE7F7 /* S-CoreDream-6Bold.otf */; };
+		BF1CE6BC2C8AA352008AE7F7 /* S-CoreDream-3Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = BF1CE6B82C8AA352008AE7F7 /* S-CoreDream-3Light.otf */; };
+		BF1CE6BD2C8AA352008AE7F7 /* S-CoreDream-5Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = BF1CE6B92C8AA352008AE7F7 /* S-CoreDream-5Medium.otf */; };
+		BF1CE6BE2C8AA352008AE7F7 /* S-CoreDream-4Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = BF1CE6BA2C8AA352008AE7F7 /* S-CoreDream-4Regular.otf */; };
 		BFC7F13E2C7EECB100EEA14F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F13D2C7EECB100EEA14F /* AppDelegate.swift */; };
 		BFC7F1402C7EECB100EEA14F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F13F2C7EECB100EEA14F /* SceneDelegate.swift */; };
 		BFC7F1422C7EECB100EEA14F /* GoalMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1412C7EECB100EEA14F /* GoalMainViewController.swift */; };
 		BFC7F1472C7EECB300EEA14F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFC7F1462C7EECB300EEA14F /* Assets.xcassets */; };
 		BFC7F14A2C7EECB300EEA14F /* Base in Resources */ = {isa = PBXBuildFile; fileRef = BFC7F1492C7EECB300EEA14F /* Base */; };
-		BFC7F16F2C7F0AB500EEA14F /* S-CoreDream-6Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BFC7F16B2C7F0AB500EEA14F /* S-CoreDream-6Bold.otf */; };
-		BFC7F1702C7F0AB500EEA14F /* S-CoreDream-3Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = BFC7F16C2C7F0AB500EEA14F /* S-CoreDream-3Light.otf */; };
-		BFC7F1712C7F0AB500EEA14F /* S-CoreDream-4Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = BFC7F16D2C7F0AB500EEA14F /* S-CoreDream-4Regular.otf */; };
-		BFC7F1722C7F0AB500EEA14F /* S-CoreDream-5Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = BFC7F16E2C7F0AB500EEA14F /* S-CoreDream-5Medium.otf */; };
 		BFC7F1762C7F0FEE00EEA14F /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1752C7F0FEE00EEA14F /* UIImage+Extension.swift */; };
 		BFC7F1782C7F18ED00EEA14F /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1772C7F18ED00EEA14F /* ButtonStyle.swift */; };
 		BFC7F17A2C800CE500EEA14F /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1792C800CE500EEA14F /* UIFont+Extension.swift */; };
@@ -48,6 +48,10 @@
 		BF1CE6B12C88926E008AE7F7 /* GoalListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalListViewController.swift; sourceTree = "<group>"; };
 		BF1CE6B32C889280008AE7F7 /* GoalListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalListView.swift; sourceTree = "<group>"; };
 		BF1CE6B52C889296008AE7F7 /* GoalListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalListViewModel.swift; sourceTree = "<group>"; };
+		BF1CE6B72C8AA352008AE7F7 /* S-CoreDream-6Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "S-CoreDream-6Bold.otf"; sourceTree = "<group>"; };
+		BF1CE6B82C8AA352008AE7F7 /* S-CoreDream-3Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "S-CoreDream-3Light.otf"; sourceTree = "<group>"; };
+		BF1CE6B92C8AA352008AE7F7 /* S-CoreDream-5Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "S-CoreDream-5Medium.otf"; sourceTree = "<group>"; };
+		BF1CE6BA2C8AA352008AE7F7 /* S-CoreDream-4Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "S-CoreDream-4Regular.otf"; sourceTree = "<group>"; };
 		BFC7F13A2C7EECB100EEA14F /* todoStar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = todoStar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFC7F13D2C7EECB100EEA14F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFC7F13F2C7EECB100EEA14F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,10 +59,6 @@
 		BFC7F1462C7EECB300EEA14F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFC7F1492C7EECB300EEA14F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BFC7F14B2C7EECB300EEA14F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BFC7F16B2C7F0AB500EEA14F /* S-CoreDream-6Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "S-CoreDream-6Bold.otf"; path = "../../../../../../Downloads/S-Core_Dream_OTF/S-CoreDream-6Bold.otf"; sourceTree = "<group>"; };
-		BFC7F16C2C7F0AB500EEA14F /* S-CoreDream-3Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "S-CoreDream-3Light.otf"; path = "../../../../../../Downloads/S-Core_Dream_OTF/S-CoreDream-3Light.otf"; sourceTree = "<group>"; };
-		BFC7F16D2C7F0AB500EEA14F /* S-CoreDream-4Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "S-CoreDream-4Regular.otf"; path = "../../../../../../Downloads/S-Core_Dream_OTF/S-CoreDream-4Regular.otf"; sourceTree = "<group>"; };
-		BFC7F16E2C7F0AB500EEA14F /* S-CoreDream-5Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "S-CoreDream-5Medium.otf"; path = "../../../../../../Downloads/S-Core_Dream_OTF/S-CoreDream-5Medium.otf"; sourceTree = "<group>"; };
 		BFC7F1752C7F0FEE00EEA14F /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		BFC7F1772C7F18ED00EEA14F /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 		BFC7F1792C800CE500EEA14F /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
@@ -168,10 +168,10 @@
 		BFC7F1532C7EEEAA00EEA14F /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				BFC7F16C2C7F0AB500EEA14F /* S-CoreDream-3Light.otf */,
-				BFC7F16D2C7F0AB500EEA14F /* S-CoreDream-4Regular.otf */,
-				BFC7F16E2C7F0AB500EEA14F /* S-CoreDream-5Medium.otf */,
-				BFC7F16B2C7F0AB500EEA14F /* S-CoreDream-6Bold.otf */,
+				BF1CE6B82C8AA352008AE7F7 /* S-CoreDream-3Light.otf */,
+				BF1CE6BA2C8AA352008AE7F7 /* S-CoreDream-4Regular.otf */,
+				BF1CE6B92C8AA352008AE7F7 /* S-CoreDream-5Medium.otf */,
+				BF1CE6B72C8AA352008AE7F7 /* S-CoreDream-6Bold.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -333,11 +333,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFC7F1472C7EECB300EEA14F /* Assets.xcassets in Resources */,
-				BFC7F16F2C7F0AB500EEA14F /* S-CoreDream-6Bold.otf in Resources */,
+				BF1CE6BD2C8AA352008AE7F7 /* S-CoreDream-5Medium.otf in Resources */,
+				BF1CE6BB2C8AA352008AE7F7 /* S-CoreDream-6Bold.otf in Resources */,
 				BFC7F14A2C7EECB300EEA14F /* Base in Resources */,
-				BFC7F1712C7F0AB500EEA14F /* S-CoreDream-4Regular.otf in Resources */,
-				BFC7F1702C7F0AB500EEA14F /* S-CoreDream-3Light.otf in Resources */,
-				BFC7F1722C7F0AB500EEA14F /* S-CoreDream-5Medium.otf in Resources */,
+				BF1CE6BE2C8AA352008AE7F7 /* S-CoreDream-4Regular.otf in Resources */,
+				BF1CE6BC2C8AA352008AE7F7 /* S-CoreDream-3Light.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

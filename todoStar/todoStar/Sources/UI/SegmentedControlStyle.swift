@@ -53,8 +53,8 @@ func segmentedContolCreated(to segmentedControl: UISegmentedControl, items: [Str
     segmentedControl.backgroundColor = .natural80
     
     NSLayoutConstraint.activate([
-        segmentedControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
-        segmentedControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
+        segmentedControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+        segmentedControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
         segmentedControl.heightAnchor.constraint(equalToConstant: 60)
     ])
     

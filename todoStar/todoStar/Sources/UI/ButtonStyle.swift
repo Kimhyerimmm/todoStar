@@ -13,8 +13,8 @@ func buttonConstraint(button: UIButton, in view: UIView, height: CGFloat = 60) {
     view.addSubview(button)
     
     NSLayoutConstraint.activate([
-        button.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
-        button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
+        button.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+        button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
         button.heightAnchor.constraint(equalToConstant: height)
     ])
 }
@@ -172,7 +172,8 @@ func textButtonStyle(title: String) -> UIButton.Configuration {
     var config = UIButton.Configuration.plain()
     config.title = title
     config.baseForegroundColor = .natural40
-    
+    config.contentInsets = .init(top: 0, leading: 0, bottom: 0, trailing: 0)
+
     // 폰트 스타일
     var titleStyle = AttributedString(title)
     titleStyle.font = .bodySmallRegular()
