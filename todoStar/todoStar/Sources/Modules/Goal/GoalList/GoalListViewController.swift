@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GoalListViewController: UIViewController {
+class GoalListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     // MARK: - Property
     let goalListView = GoalListView()
@@ -51,6 +51,15 @@ class GoalListViewController: UIViewController {
 
 
     // MARK: - Data Source
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        
+        return cell
+    }
 
 
     // MARK: - Delegate
