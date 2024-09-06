@@ -24,14 +24,14 @@ class GoalMainView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
-        viewModel.loadCurrentGoal()
+        viewModel.loadGoal()
         dailyTodoListView.reloadData()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setupView()
-        viewModel.loadCurrentGoal()
+        viewModel.loadGoal()
         dailyTodoListView.reloadData()
     }
     

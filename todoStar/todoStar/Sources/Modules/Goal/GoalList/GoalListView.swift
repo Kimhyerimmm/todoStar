@@ -100,7 +100,7 @@ class GoalListView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
             highCollectionListView.topAnchor.constraint(equalTo: highTitle.bottomAnchor, constant: 10),
             highCollectionListView.leadingAnchor.constraint(equalTo: importanceHighView.leadingAnchor),
             highCollectionListView.trailingAnchor.constraint(equalTo: importanceHighView.trailingAnchor),
-            highCollectionListView.heightAnchor.constraint(equalToConstant: 120)
+            highCollectionListView.heightAnchor.constraint(equalToConstant: (140 * 4) - 20)
         ])
     }
 
@@ -112,18 +112,18 @@ class GoalListView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
 
     func highViewList() {
         let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
+        layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 20
 
         highCollectionListView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         highCollectionListView.register(GoalListCell.self, forCellWithReuseIdentifier: GoalListCell.identifier)
         highCollectionListView.dataSource = self
         highCollectionListView.delegate = self
+        highCollectionListView.backgroundColor = .clear
     }
 
     // MARK: - Data Source
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-
         return 4
     }
 
@@ -131,5 +131,11 @@ class GoalListView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GoalListCell.identifier, for: indexPath) as! GoalListCell
 
         return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = collectionView.frame.width
+
+        return CGSize(width: width, height: 120)
     }
 }

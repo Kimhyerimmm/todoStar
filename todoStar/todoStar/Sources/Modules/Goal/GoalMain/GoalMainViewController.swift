@@ -23,7 +23,7 @@ class GoalMainViewController: UIViewController, GoalMainViewDelegate {
         super.viewWillAppear(animated)
 
         // 데이터를 다시 로드
-        goalMainViewModel.loadCurrentGoal()
+        goalMainViewModel.loadGoal()
     }
 
     override func viewDidLoad() {

@@ -16,16 +16,22 @@ class GoalRecordDataModel: Identifiable, CustomStringConvertible {
     var importance: String
     var reward: String
     var progressStatus: Bool
+    var goalPeriod: Int
+    var goalStatus: Int
     var createdDate: Date
+    var completionGoal: Bool
 
-    init(goalId: UUID, lastGoal: String, middleGoal: [MiddleGoalDataModel], importance: String, reward: String, progressStatus: Bool, createdDate: Date) {
+    init(goalId: UUID, lastGoal: String, middleGoal: [MiddleGoalDataModel], importance: String, reward: String, progressStatus: Bool, createdDate: Date, completionGoal: Bool = false) {
         self.goalId = goalId
         self.lastGoal = lastGoal
         self.middleGoal = middleGoal
         self.importance = importance
         self.reward = reward
         self.progressStatus = progressStatus
+        self.goalPeriod = middleGoal.count
+        self.goalStatus = middleGoal.filter { $0.completionGoal }.count
         self.createdDate = createdDate
+        self.completionGoal = completionGoal
     }
 
     var description: String {
@@ -41,14 +47,16 @@ class MiddleGoalDataModel: Identifiable, CustomStringConvertible {
     var goalPeriod: Int
     var goalStatus: Int
     var createdDate: Date
+    var completionGoal: Bool
 
-    init(middleGoalId: UUID, middleGoal: String, smallGoal: String, goalPeriod: Int, goalStatus: Int, createdDate: Date) {
+    init(middleGoalId: UUID, middleGoal: String, smallGoal: String, goalPeriod: Int, goalStatus: Int = 0, createdDate: Date) {
         self.middleGoalId = middleGoalId
         self.middleGoal = middleGoal
         self.smallGoal = smallGoal
         self.goalPeriod = goalPeriod
         self.goalStatus = goalStatus
         self.createdDate = createdDate
+        self.completionGoal = (goalPeriod == goalStatus)
     }
 
     var description: String {

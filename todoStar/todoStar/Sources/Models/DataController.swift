@@ -1,3 +1,4 @@
+
 //
 //  DataController.swift
 //  todoStar
@@ -19,7 +20,7 @@ class DBController {
     static let shared = DBController()
     var container: ModelContainer?
     var context: ModelContext?
-    
+
     init() {
         do {
             self.container = try ModelContainer(for: GoalDataModelType.self,
@@ -33,7 +34,7 @@ class DBController {
             print("do: \(error)")
         }
     }
-    
+
     // MARK: - 데이터 삽입
     func insertGoalData(data: GoalDataModelType) {
         if let context = self.context {
@@ -41,28 +42,28 @@ class DBController {
             print("데이터 저장 완료")
         }
     }
-    
+
     func insertMiddleGoalData(data: MiddleGoalDataModelType) {
         if let context = self.context {
             context.insert(data)
             print("데이터 저장 완료")
         }
     }
-    
+
     func insertAccomplishmentData(data: AccomplishmentDataModelType) {
         if let context = self.context {
             context.insert(data)
             print("데이터 저장 완료")
         }
     }
-    
+
     func insertAchievementData(data: AchievementDataModelType) {
         if let context = self.context {
             context.insert(data)
             print("데이터 저장 완료")
         }
     }
-    
+
     // MARK: - 데이터 불러오기
     func fetchGoalData(completion: @escaping ([GoalDataModelType]?, Error?) -> ()) {
         let descriptor = FetchDescriptor<GoalDataModelType>(
@@ -70,7 +71,7 @@ class DBController {
                 .init(\.createdDate, order: .reverse)
             ]
         )
-        
+
         if let context = self.context {
             do {
                 let data = try context.fetch(descriptor)
@@ -80,14 +81,14 @@ class DBController {
             }
         }
     }
-    
+
     func fetchMiddleGoalData(completion: @escaping ([MiddleGoalDataModelType]?, Error?) -> ()) {
         let descriptor = FetchDescriptor<MiddleGoalDataModelType>(
             sortBy: [
                 .init(\.createdDate, order: .reverse)
             ]
         )
-        
+
         if let context = self.context {
             do {
                 let data = try context.fetch(descriptor)
@@ -97,14 +98,14 @@ class DBController {
             }
         }
     }
-    
+
     func fetchAccomplishmentData(completion: @escaping ([AccomplishmentDataModelType]?, Error?) -> ()) {
         let descriptor = FetchDescriptor<AccomplishmentDataModelType>(
             sortBy: [
                 .init(\.createdDate, order: .reverse)
             ]
         )
-        
+
         if let context = self.context {
             do {
                 let data = try context.fetch(descriptor)
@@ -114,14 +115,14 @@ class DBController {
             }
         }
     }
-    
+
     func fetchAchievementData(completion: @escaping ([AchievementDataModelType]?, Error?) -> ()) {
         let descriptor = FetchDescriptor<AchievementDataModelType>(
             sortBy: [
                 .init(\.achievementDate, order: .reverse)
             ]
         )
-        
+
         if let context = self.context {
             do {
                 let data = try context.fetch(descriptor)
@@ -131,7 +132,7 @@ class DBController {
             }
         }
     }
-    
+
     // MARK: - 데이터 수정하기
     func updateGoalData(model: GoalDataModelType, data: GoalDataModelType) {
         let dataToBeUpdated = model
@@ -142,8 +143,9 @@ class DBController {
         dataToBeUpdated.reward = data.reward
         dataToBeUpdated.progressStatus = data.progressStatus
         dataToBeUpdated.createdDate = data.createdDate
+        dataToBeUpdated.completionGoal = data.completionGoal
     }
-    
+
     func updateMiddleGoalData(model: MiddleGoalDataModelType, data: MiddleGoalDataModelType) {
         let dataToBeUpdated = model
         dataToBeUpdated.middleGoalId = data.middleGoalId
@@ -152,8 +154,9 @@ class DBController {
         dataToBeUpdated.goalPeriod = data.goalPeriod
         dataToBeUpdated.goalStatus = data.goalStatus
         dataToBeUpdated.createdDate = data.createdDate
+        dataToBeUpdated.completionGoal = data.completionGoal
     }
-    
+
     func updateAccomplishmentData(model: AccomplishmentDataModelType, data: AccomplishmentDataModelType) {
         let dataToBeUpdated = model
         dataToBeUpdated.accomplishmentId = data.accomplishmentId
@@ -163,7 +166,7 @@ class DBController {
         dataToBeUpdated.selfCheering = data.selfCheering
         dataToBeUpdated.createdDate = data.createdDate
     }
-    
+
     func updateAchievementData(model: AchievementDataModelType, data: AchievementDataModelType) {
         let dataToBeUpdated = model
         dataToBeUpdated.achievementId = data.achievementId
@@ -172,7 +175,7 @@ class DBController {
         dataToBeUpdated.achievementDate = data.achievementDate
         dataToBeUpdated.goalId = data.goalId
     }
-    
+
     // MARK: - 데이터 삭제하기
     func deleteGoalData(model: GoalDataModelType) {
         let dataToBeDeleted = model
@@ -180,28 +183,28 @@ class DBController {
             context.delete(dataToBeDeleted)
         }
     }
-    
+
     func deleteMiddleGoalData(model: MiddleGoalDataModelType) {
         let dataToBeDeleted = model
         if let context = self.context {
             context.delete(dataToBeDeleted)
         }
     }
-    
+
     func deleteAccomplishmentData(model: AccomplishmentDataModelType) {
         let dataToBeDeleted = model
         if let context = self.context {
             context.delete(dataToBeDeleted)
         }
     }
-    
+
     func deleteAchievementData(model: AchievementDataModelType) {
         let dataToBeDeleted = model
         if let context = self.context {
             context.delete(dataToBeDeleted)
         }
     }
-    
+
     // MARK: - 모든 데이터 삭제하기
     func clearAllData() {
         // 각 엔티티에 대한 데이터를 삭제합니다.
@@ -213,7 +216,7 @@ class DBController {
 
     private func deleteAllData<T: PersistentModel>(for modelType: T.Type) {
         let descriptor = FetchDescriptor<T>()
-        
+
         if let context = self.context {
             do {
                 let data = try context.fetch(descriptor)

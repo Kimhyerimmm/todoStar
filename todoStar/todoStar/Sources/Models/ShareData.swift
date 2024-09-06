@@ -39,7 +39,8 @@ class ShareData {
                             smallGoal: "데이터 모델 생성",
                             goalPeriod: 7,
                             goalStatus: 7,
-                            createdDate: Date()
+                            createdDate: Date(),
+                            completionGoal: true
                         ),
                         MiddleGoalDataModel(
                             middleGoalId: UUID(),
@@ -47,13 +48,15 @@ class ShareData {
                             smallGoal: "사용자 인터페이스 디자인",
                             goalPeriod: 10,
                             goalStatus: 7,
-                            createdDate: Date()
+                            createdDate: Date(),
+                            completionGoal: false
                         )
                     ],
                     importance: "높음",
                     reward: "주말 여행",
                     progressStatus: true,
-                    createdDate: Date()
+                    createdDate: Date(),
+                    completionGoal: false
                 ),
                 GoalRecordDataModel(
                     goalId: UUID(),
@@ -65,7 +68,8 @@ class ShareData {
                             smallGoal: "매일 5K 달리기",
                             goalPeriod: 14,
                             goalStatus: 7,
-                            createdDate: Date()
+                            createdDate: Date(),
+                            completionGoal: false
                         ),
                         MiddleGoalDataModel(
                             middleGoalId: UUID(),
@@ -73,13 +77,15 @@ class ShareData {
                             smallGoal: "인터벌 트레이닝",
                             goalPeriod: 10,
                             goalStatus: 7,
-                            createdDate: Date()
+                            createdDate: Date(),
+                            completionGoal: false
                         )
                     ],
                     importance: "중간",
                     reward: "새로운 러닝화",
                     progressStatus: true,
-                    createdDate: Date()
+                    createdDate: Date(),
+                    completionGoal: false
                 ),
                 GoalRecordDataModel(
                     goalId: UUID(),
@@ -91,7 +97,8 @@ class ShareData {
                             smallGoal: "초급 과정 완료",
                             goalPeriod: 30,
                             goalStatus: 7,
-                            createdDate: Date()
+                            createdDate: Date(),
+                            completionGoal: false
                         ),
                         MiddleGoalDataModel(
                             middleGoalId: UUID(),
@@ -99,13 +106,15 @@ class ShareData {
                             smallGoal: "매일 말하기 연습",
                             goalPeriod: 60,
                             goalStatus: 7,
-                            createdDate: Date()
+                            createdDate: Date(),
+                            completionGoal: false
                         )
                     ],
                     importance: "높음",
                     reward: "언어 교환 여행",
                     progressStatus: false,
-                    createdDate: Date()
+                    createdDate: Date(),
+                    completionGoal: false
                 )
             ]
 

@@ -12,6 +12,10 @@ class GoalListCell: UICollectionViewCell {
     // MARK: - Property
     static let identifier = "goalListCell"
 
+    private let progressStatus = UILabel()
+    private let lastGoal = UILabel()
+    private let goalStatus = UILabel()
+
 
     // MARK: - Life Cycle
     override init(frame: CGRect) {
@@ -27,17 +31,22 @@ class GoalListCell: UICollectionViewCell {
 
     // MARK: - Setup Method
     func setupCollection() {
-        // TODO: 뷰 붙이고 위치 잡기
+        cellStyle()
+        
+        contentView.addSubview(progressStatus)
+        contentView.addSubview(lastGoal)
+        contentView.addSubview(goalStatus)
     }
 
     // MARK: - Method
     // 셀 스타일
-    func style() {
-        // TODO: 셀 스타일
+    func cellStyle() {
+        contentView.backgroundColor = .natural90
+        contentView.layer.cornerRadius = 10
     }
 
     // 셀 내용
-    func model() {
+    func model(with model: GoalListModel) {
         // TODO: 셀에 넣을 내용 어디서 받아올 건지
     }
 }

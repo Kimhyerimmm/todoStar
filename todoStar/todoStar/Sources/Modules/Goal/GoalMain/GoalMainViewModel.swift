@@ -19,15 +19,14 @@ struct CurrentGoalModel {
 
 class GoalMainViewModel {
     private let shareData = ShareData.shared
-    typealias goalData = CurrentGoalModel
     
     var currentGoals: [CurrentGoalModel] = []
     
     init() {
-        loadCurrentGoal()
+        loadGoal()
     }
     
-    func loadCurrentGoal() {
+    func loadGoal() {
         // 모든 GoalRecordDataModel 가져오기
         let goalData = shareData.getGoalData()
 
