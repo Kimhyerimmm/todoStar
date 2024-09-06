@@ -10,7 +10,6 @@ import UIKit
 class CustomNavigationController: UINavigationController {
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         super.pushViewController(viewController, animated: animated)
-
         // 백 버튼 커스터마이즈
         if viewControllers.count > 1 {
             let backButton = UIButton(type: .custom)
@@ -50,5 +49,17 @@ class CustomNavigationController: UINavigationController {
         spaceItem.width = 16
 
         return [spaceItem, buttonItem]
+    }
+
+    static func navigationTitle(title: String) -> UINavigationItem {
+        let navigationItem = UINavigationItem()
+        let titleLabel = UILabel()
+        titleLabel.text = title
+        titleLabel.font = .bodyRegular()
+        titleLabel.textColor = .white
+
+        navigationItem.titleView = titleLabel
+
+        return navigationItem
     }
 }

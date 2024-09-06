@@ -24,6 +24,10 @@ class GoalListViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         // MARK: - Navigation Bar
+        // 타이틀 설정
+        let navigationTitle = CustomNavigationController.navigationTitle(title: "목표 리스트")
+        self.navigationItem.titleView = navigationTitle.titleView
+        
         // 우측 버튼 설정
         let rightBarButtonItem = CustomNavigationController.setupRightBarButton(
             withImage: "cancle",
