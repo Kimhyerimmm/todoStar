@@ -14,6 +14,7 @@
 		BF1CE6BC2C8AA352008AE7F7 /* S-CoreDream-3Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = BF1CE6B82C8AA352008AE7F7 /* S-CoreDream-3Light.otf */; };
 		BF1CE6BD2C8AA352008AE7F7 /* S-CoreDream-5Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = BF1CE6B92C8AA352008AE7F7 /* S-CoreDream-5Medium.otf */; };
 		BF1CE6BE2C8AA352008AE7F7 /* S-CoreDream-4Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = BF1CE6BA2C8AA352008AE7F7 /* S-CoreDream-4Regular.otf */; };
+		BF1CE6C02C8AD85A008AE7F7 /* GoalListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1CE6BF2C8AD85A008AE7F7 /* GoalListCell.swift */; };
 		BFC7F13E2C7EECB100EEA14F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F13D2C7EECB100EEA14F /* AppDelegate.swift */; };
 		BFC7F1402C7EECB100EEA14F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F13F2C7EECB100EEA14F /* SceneDelegate.swift */; };
 		BFC7F1422C7EECB100EEA14F /* GoalMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1412C7EECB100EEA14F /* GoalMainViewController.swift */; };
@@ -52,6 +53,7 @@
 		BF1CE6B82C8AA352008AE7F7 /* S-CoreDream-3Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "S-CoreDream-3Light.otf"; sourceTree = "<group>"; };
 		BF1CE6B92C8AA352008AE7F7 /* S-CoreDream-5Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "S-CoreDream-5Medium.otf"; sourceTree = "<group>"; };
 		BF1CE6BA2C8AA352008AE7F7 /* S-CoreDream-4Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "S-CoreDream-4Regular.otf"; sourceTree = "<group>"; };
+		BF1CE6BF2C8AD85A008AE7F7 /* GoalListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalListCell.swift; sourceTree = "<group>"; };
 		BFC7F13A2C7EECB100EEA14F /* todoStar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = todoStar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFC7F13D2C7EECB100EEA14F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFC7F13F2C7EECB100EEA14F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				BF1CE6B12C88926E008AE7F7 /* GoalListViewController.swift */,
 				BF1CE6B32C889280008AE7F7 /* GoalListView.swift */,
 				BF1CE6B52C889296008AE7F7 /* GoalListViewModel.swift */,
+				BF1CE6BF2C8AD85A008AE7F7 /* GoalListCell.swift */,
 			);
 			path = GoalList;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				BFC7F1862C834A7300EEA14F /* SegmentedControlStyle.swift in Sources */,
 				BFC7F1AF2C869C3A00EEA14F /* GoalMainView.swift in Sources */,
 				BFC7F1762C7F0FEE00EEA14F /* UIImage+Extension.swift in Sources */,
+				BF1CE6C02C8AD85A008AE7F7 /* GoalListCell.swift in Sources */,
 				BFC7F1912C849FE700EEA14F /* StorageMainViewController.swift in Sources */,
 				BFC7F19D2C84AA7800EEA14F /* UIView+Extension.swift in Sources */,
 				BFC7F18C2C84395B00EEA14F /* DataModel.swift in Sources */,

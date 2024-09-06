@@ -15,7 +15,6 @@ class GoalMainViewController: UIViewController, GoalMainViewDelegate {
     
     
     // MARK: - Lifecycle
-
     override func loadView() {
         self.view = goalMainView
     }

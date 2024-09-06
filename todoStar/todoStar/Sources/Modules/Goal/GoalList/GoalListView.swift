@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GoalListView: UIView {
+class GoalListView: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     // MARK: - Property
     private let viewModel = GoalListViewModel()
@@ -15,17 +15,17 @@ class GoalListView: UIView {
     // 중요도 높음 리스트
     private let importanceHighView = UIView()
     private let highTitle = UILabel()
-    private let highTableView = UITableView()
+    private var highCollectionListView: UICollectionView!
 
     // 중요도 중간 리스트
     private let importanceMiddleView = UIView()
     private let middleTitle = UILabel()
-    private let middleTableView = UITableView()
+    //private var middleCollectionListView = UICollectionView()
 
     // 중요도 낮음 리스트
     private let importanceRowView = UIView()
     private let rowTitle = UILabel()
-    private let rowTableView = UITableView()
+    //private var rowCollectionListView = UICollectionView()
 
 
     // MARK: Life Cycle
@@ -41,6 +41,10 @@ class GoalListView: UIView {
     
     // MARK: - Setup Method
     func setupView() {
+        highViewList()
+
+        highView()
+
         addSubview(importanceHighView)
         addSubview(importanceMiddleView)
         addSubview(importanceRowView)
@@ -53,26 +57,79 @@ class GoalListView: UIView {
         NSLayoutConstraint.activate([
             importanceHighView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 30),
             importanceHighView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
-            importanceHighView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 20)
+            importanceHighView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20)
         ])
 
         // importanceMiddleView 오토 레이아웃
         NSLayoutConstraint.activate([
             importanceMiddleView.topAnchor.constraint(equalTo: importanceHighView.bottomAnchor, constant: 40),
             importanceMiddleView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
-            importanceMiddleView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 20)
+            importanceMiddleView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20)
         ])
 
         // importanceRowView 오토 레이아웃
         NSLayoutConstraint.activate([
             importanceRowView.topAnchor.constraint(equalTo: importanceMiddleView.bottomAnchor, constant: 40),
             importanceRowView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
-            importanceRowView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 20)
+            importanceRowView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20)
         ])
     }
 
 
     // MARK: - View
     // MARK: 중요도 높음 리스트
-    
+    func highView() {
+        highViewTitle()
+
+        importanceHighView.addSubview(highTitle)
+        importanceHighView.addSubview(highCollectionListView)
+
+        highTitle.translatesAutoresizingMaskIntoConstraints = false
+        highCollectionListView.translatesAutoresizingMaskIntoConstraints = false
+
+        // 타이틀 오토 레이아웃
+        NSLayoutConstraint.activate([
+            highTitle.topAnchor.constraint(equalTo: importanceHighView.topAnchor),
+            highTitle.leadingAnchor.constraint(equalTo: importanceHighView.leadingAnchor),
+            highTitle.trailingAnchor.constraint(equalTo: importanceHighView.trailingAnchor),
+            highTitle.heightAnchor.constraint(equalToConstant: 20)
+        ])
+
+        // 리스트 오토 레이아웃
+        NSLayoutConstraint.activate([
+            highCollectionListView.topAnchor.constraint(equalTo: highTitle.bottomAnchor, constant: 10),
+            highCollectionListView.leadingAnchor.constraint(equalTo: importanceHighView.leadingAnchor),
+            highCollectionListView.trailingAnchor.constraint(equalTo: importanceHighView.trailingAnchor),
+            highCollectionListView.heightAnchor.constraint(equalToConstant: 120)
+        ])
+    }
+
+    func highViewTitle() {
+        highTitle.text = "반드시 해야 해요!"
+        highTitle.font = .bodySmallRegular()
+        highTitle.textColor = .natural40
+    }
+
+    func highViewList() {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.minimumLineSpacing = 20
+
+        highCollectionListView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        highCollectionListView.register(GoalListCell.self, forCellWithReuseIdentifier: GoalListCell.identifier)
+        highCollectionListView.dataSource = self
+        highCollectionListView.delegate = self
+    }
+
+    // MARK: - Data Source
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+
+        return 4
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GoalListCell.identifier, for: indexPath) as! GoalListCell
+
+        return cell
+    }
 }

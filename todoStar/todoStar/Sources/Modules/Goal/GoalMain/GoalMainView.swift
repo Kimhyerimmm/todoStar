@@ -212,8 +212,4 @@ class GoalMainView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
         cell.config(with: model)
         return cell
     }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 254.0, height: 323.0)
-    }
 }

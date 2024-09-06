@@ -8,8 +8,7 @@
 import UIKit
 
 class CurrentGoalListCell: UICollectionViewCell {
-    static let identifier = "goalListCell"
-    private let shareData = ShareData.shared
+    static let identifier = "currentGoalListCell"
     
     private let currentSmallGoal = UILabel()
     private let currentMiddleGoal = UIView()
