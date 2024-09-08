@@ -20,6 +20,9 @@ class GoalListViewModel {
     private let shareData = ShareData.shared
 
     var goalLists: [GoalListModel] = []
+    var highData: [GoalListModel] = []
+    var middleData: [GoalListModel] = []
+    var rowData: [GoalListModel] = []
 
     init() {
         loadGoal()
@@ -38,6 +41,10 @@ class GoalListViewModel {
                           completionGoal: goal.completionGoal,
                           importance: goal.importance)
         }
+
+        highData = goalLists.filter { $0.importance == "반드시 해야 해요!"}
+        middleData = goalLists.filter { $0.importance == "해야 하지만 급하지 않아요."}
+        rowData = goalLists.filter { $0.importance == "하고 싶지만 급하지 않아요."}
 
     }
 }

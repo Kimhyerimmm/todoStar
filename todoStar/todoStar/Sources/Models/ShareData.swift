@@ -50,7 +50,7 @@ class ShareData {
                         MiddleGoalDataModel(middleGoalId: UUID(), middleGoal: "자료 정리하기", smallGoal: "참고 자료 준비하기", goalPeriod: 3, goalStatus: 2, createdDate: Date(timeIntervalSince1970: 1700013600), completionGoal: false),
                         MiddleGoalDataModel(middleGoalId: UUID(), middleGoal: "자료 정리하기", smallGoal: "참고 자료 준비하기", goalPeriod: 3, goalStatus: 2, createdDate: Date(timeIntervalSince1970: 1700013600), completionGoal: false)
                     ],
-                    importance: "해야 하지만 급하지 않아요.",
+                    importance: "반드시 해야 해요!",
                     reward: "커피 기프티콘",
                     progressStatus: true,
                     createdDate: Date(timeIntervalSince1970: 1699800000),
@@ -76,7 +76,7 @@ class ShareData {
                         MiddleGoalDataModel(middleGoalId: UUID(), middleGoal: "업무 목록 작성하기", smallGoal: "우선순위 매기기", goalPeriod: 2, goalStatus: 2, createdDate: Date(timeIntervalSince1970: 1700030000), completionGoal: true),
                         MiddleGoalDataModel(middleGoalId: UUID(), middleGoal: "진행 상황 점검하기", smallGoal: "업무 완료 여부 확인하기", goalPeriod: 2, goalStatus: 1, createdDate: Date(timeIntervalSince1970: 1700033600), completionGoal: false)
                     ],
-                    importance: "해야 하지만 급하지 않아요.",
+                    importance: "하고 싶지만 급하지 않아요.",
                     reward: "시간 관리 앱",
                     progressStatus: true,
                     createdDate: Date(timeIntervalSince1970: 1699600000),
