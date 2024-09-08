@@ -12,6 +12,9 @@ class GoalListView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
     // MARK: - Property
     private let viewModel = GoalListViewModel()
 
+    private let scrollView = UIScrollView()
+    private let contentView = UIView()
+
     // 중요도 높음 리스트
     private let importanceHighView = UIView()
     private let highTitle = UILabel()
@@ -20,18 +23,22 @@ class GoalListView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
     // 중요도 중간 리스트
     private let importanceMiddleView = UIView()
     private let middleTitle = UILabel()
-    //private var middleCollectionListView = UICollectionView()
+    private var middleCollectionListView: UICollectionView!
 
     // 중요도 낮음 리스트
     private let importanceRowView = UIView()
     private let rowTitle = UILabel()
-    //private var rowCollectionListView = UICollectionView()
+    private var rowCollectionListView: UICollectionView!
 
 
     // MARK: Life Cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
+        viewModel.loadGoal()
+        highCollectionListView.reloadData()
+        middleCollectionListView.reloadData()
+        rowCollectionListView.reloadData()
     }
 
     required init?(coder: NSCoder) {
@@ -41,13 +48,37 @@ class GoalListView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
     
     // MARK: - Setup Method
     func setupView() {
-        highViewList()
 
-        highView()
+        addSubview(scrollView)
+        scrollView.addSubview(contentView)
 
-        addSubview(importanceHighView)
-        addSubview(importanceMiddleView)
-        addSubview(importanceRowView)
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+
+        // 오토 레이아웃(scrollView)
+        NSLayoutConstraint.activate([
+            scrollView.topAnchor.constraint(equalTo: self.topAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+        ])
+
+        // 오토 레이아웃(contentView)
+        NSLayoutConstraint.activate([
+            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
+        ])
+
+        setupContentView()
+    }
+
+    func setupContentView() {
+        contentView.addSubview(importanceHighView)
+        contentView.addSubview(importanceMiddleView)
+        contentView.addSubview(importanceRowView)
 
         importanceHighView.translatesAutoresizingMaskIntoConstraints = false
         importanceMiddleView.translatesAutoresizingMaskIntoConstraints = false
@@ -55,39 +86,63 @@ class GoalListView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
 
         // importanceHighView 오토 레이아웃
         NSLayoutConstraint.activate([
-            importanceHighView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 30),
-            importanceHighView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
-            importanceHighView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20)
+            importanceHighView.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor, constant: 30),
+            importanceHighView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            importanceHighView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            importanceHighView.heightAnchor.constraint(equalToConstant: 300)
         ])
 
         // importanceMiddleView 오토 레이아웃
         NSLayoutConstraint.activate([
             importanceMiddleView.topAnchor.constraint(equalTo: importanceHighView.bottomAnchor, constant: 40),
-            importanceMiddleView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
-            importanceMiddleView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20)
+            importanceMiddleView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            importanceMiddleView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            importanceMiddleView.heightAnchor.constraint(equalToConstant: 300)
         ])
 
         // importanceRowView 오토 레이아웃
         NSLayoutConstraint.activate([
             importanceRowView.topAnchor.constraint(equalTo: importanceMiddleView.bottomAnchor, constant: 40),
-            importanceRowView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
-            importanceRowView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20)
+            importanceRowView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            importanceRowView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            importanceRowView.heightAnchor.constraint(equalToConstant: 300),
+            importanceRowView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -30)
         ])
+
+        subView()
     }
 
 
     // MARK: - View
-    // MARK: 중요도 높음 리스트
-    func highView() {
-        highViewTitle()
+    func subView() {
+        collectionViewTitle(view: highTitle, text: "반드시 해야 해요!")
+        highCollectionListView = collectionViewList()
+
+        collectionViewTitle(view: middleTitle, text: "해야 하지만 급하지 않아요.")
+        middleCollectionListView = collectionViewList()
+
+        collectionViewTitle(view: rowTitle, text: "하고 싶지만 급하지 않아요.")
+        rowCollectionListView = collectionViewList()
 
         importanceHighView.addSubview(highTitle)
         importanceHighView.addSubview(highCollectionListView)
 
+        importanceMiddleView.addSubview(middleTitle)
+        importanceMiddleView.addSubview(middleCollectionListView)
+
+        importanceRowView.addSubview(rowTitle)
+        importanceRowView.addSubview(rowCollectionListView)
+
         highTitle.translatesAutoresizingMaskIntoConstraints = false
         highCollectionListView.translatesAutoresizingMaskIntoConstraints = false
 
-        // 타이틀 오토 레이아웃
+        middleTitle.translatesAutoresizingMaskIntoConstraints = false
+        middleCollectionListView.translatesAutoresizingMaskIntoConstraints = false
+
+        rowTitle.translatesAutoresizingMaskIntoConstraints = false
+        rowCollectionListView.translatesAutoresizingMaskIntoConstraints = false
+
+        // 오토 레이아웃(highTitle)
         NSLayoutConstraint.activate([
             highTitle.topAnchor.constraint(equalTo: importanceHighView.topAnchor),
             highTitle.leadingAnchor.constraint(equalTo: importanceHighView.leadingAnchor),
@@ -95,42 +150,108 @@ class GoalListView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
             highTitle.heightAnchor.constraint(equalToConstant: 20)
         ])
 
-        // 리스트 오토 레이아웃
+        // 오토 레이아웃(highCollectionListView)
         NSLayoutConstraint.activate([
             highCollectionListView.topAnchor.constraint(equalTo: highTitle.bottomAnchor, constant: 10),
             highCollectionListView.leadingAnchor.constraint(equalTo: importanceHighView.leadingAnchor),
             highCollectionListView.trailingAnchor.constraint(equalTo: importanceHighView.trailingAnchor),
             highCollectionListView.heightAnchor.constraint(equalToConstant: (140 * 4) - 20)
         ])
+
+        // 오토 레이아웃(middleTitle)
+        NSLayoutConstraint.activate([
+            middleTitle.topAnchor.constraint(equalTo: importanceMiddleView.topAnchor),
+            middleTitle.leadingAnchor.constraint(equalTo: importanceMiddleView.leadingAnchor),
+            middleTitle.trailingAnchor.constraint(equalTo: importanceMiddleView.trailingAnchor),
+            middleTitle.heightAnchor.constraint(equalToConstant: 20)
+        ])
+
+        // 오토 레이아웃(middleCollectionListView)
+        NSLayoutConstraint.activate([
+            middleCollectionListView.topAnchor.constraint(equalTo: middleTitle.bottomAnchor, constant: 10),
+            middleCollectionListView.leadingAnchor.constraint(equalTo: importanceMiddleView.leadingAnchor),
+            middleCollectionListView.trailingAnchor.constraint(equalTo: importanceMiddleView.trailingAnchor),
+            middleCollectionListView.heightAnchor.constraint(equalToConstant: (140 * 4) - 20)
+        ])
+
+        // 오토 레이아웃(rowTitle)
+        NSLayoutConstraint.activate([
+            rowTitle.topAnchor.constraint(equalTo: importanceRowView.topAnchor),
+            rowTitle.leadingAnchor.constraint(equalTo: importanceRowView.leadingAnchor),
+            rowTitle.trailingAnchor.constraint(equalTo: importanceRowView.trailingAnchor),
+            rowTitle.heightAnchor.constraint(equalToConstant: 20)
+        ])
+
+        // 오토 레이아웃(rowCollectionListView)
+        NSLayoutConstraint.activate([
+            rowCollectionListView.topAnchor.constraint(equalTo: rowTitle.bottomAnchor, constant: 10),
+            rowCollectionListView.leadingAnchor.constraint(equalTo: importanceRowView.leadingAnchor),
+            rowCollectionListView.trailingAnchor.constraint(equalTo: importanceRowView.trailingAnchor),
+            rowCollectionListView.heightAnchor.constraint(equalToConstant: (140 * 4) - 20)
+        ])
     }
 
-    func highViewTitle() {
-        highTitle.text = "반드시 해야 해요!"
-        highTitle.font = .bodySmallRegular()
-        highTitle.textColor = .natural40
+    func collectionViewTitle(view: UILabel, text: String) {
+        view.text = text
+        view.font = .bodySmallRegular()
+        view.textColor = .natural40
     }
 
-    func highViewList() {
+    func collectionViewList() -> UICollectionView {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 20
+        
+        let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        view.register(GoalListCell.self, forCellWithReuseIdentifier: GoalListCell.identifier)
+        view.dataSource = self
+        view.delegate = self
+        view.backgroundColor = .clear
 
-        highCollectionListView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        highCollectionListView.register(GoalListCell.self, forCellWithReuseIdentifier: GoalListCell.identifier)
-        highCollectionListView.dataSource = self
-        highCollectionListView.delegate = self
-        highCollectionListView.backgroundColor = .clear
+        return view
     }
+
 
     // MARK: - Data Source
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+
+        if collectionView == highCollectionListView {
+            if viewModel.highData.count == 0 {
+                return 1
+            } else {
+                return viewModel.highData.count
+            }
+        } else if collectionView == middleCollectionListView {
+            if viewModel.middleData.count == 0 {
+                return 1
+            } else {
+                return viewModel.middleData.count
+            }
+        } else if collectionView == rowCollectionListView {
+            if viewModel.rowData.count == 0 {
+                return 1
+            } else {
+                return viewModel.rowData.count
+            }
+        } else {
+            return 0
+        }
+
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GoalListCell.identifier, for: indexPath) as! GoalListCell
-        let model = viewModel.goalLists[indexPath.item]
-        cell.model(with: model)
+        
+        if collectionView == highCollectionListView {
+            let model = viewModel.highData[indexPath.item]
+            cell.model(with: model)
+        } else if collectionView == middleCollectionListView {
+            let model = viewModel.middleData[indexPath.item]
+            cell.model(with: model)
+        } else if collectionView == rowCollectionListView {
+            let model = viewModel.rowData[indexPath.item]
+            cell.model(with: model)
+        }
 
         return cell
     }
