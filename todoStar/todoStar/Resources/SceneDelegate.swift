@@ -19,81 +19,62 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         window?.backgroundColor = UIColor.natural100
         
-        // TODO: 네비게이션 바 스타일 변경(아이콘 색상 변경 / 타이틀 빼기)
+        // tabBarController: viewController
+        let goalMainVC = GoalMainViewController()
+        let storageMainVC = StorageMainViewController()
+        let recordMainVC = RecordMainViewController()
+        let reportMainVC = ReportMainViewController()
+        let settingMainVC = SettingMainViewController()
+        
+        // tabBarController: icon
+        let iconNames = ["goal", "storage", "record", "report", "setting"]
+        var icons: [UIImage] = []
 
-        // 네비게이션 컨트롤러 연결 및 스타일 설정
-        let goalMainViewController = GoalMainViewController()
-        let storageMainViewController = StorageMainViewController()
-        let recordMainViewController = RecordMainViewController()
-        let reportMainViewController = ReportMainViewController()
-        let settingMainViewController = SettingMainViewController()
-        
-        let firstNavigationController = CustomNavigationController(rootViewController: goalMainViewController)
-        let secondNavigationController = CustomNavigationController(rootViewController: storageMainViewController)
-        let thirdNavigationController = CustomNavigationController(rootViewController: recordMainViewController)
-        let fourthNavigationController = CustomNavigationController(rootViewController: reportMainViewController)
-        let fifthNavigationController = CustomNavigationController(rootViewController: settingMainViewController)
-
-        let thirdMainViewControllerIcon = UIView()
-        thirdMainViewControllerIcon.frame = CGRect(x: 0, y: 0, width: 45, height: 38)
-        thirdMainViewControllerIcon.backgroundColor = UIColor.primary100
-        thirdMainViewControllerIcon.layer.cornerRadius = 10
-        thirdMainViewControllerIcon.clipsToBounds = true
-        
-        let icon = UIImageView(image: UIImage(named: "record"))
-        icon.frame = CGRect(x: 0, y: 0, width: 27, height: 27)
-        icon.center = CGPoint(x: thirdMainViewControllerIcon.bounds.width / 2,
-                              y: thirdMainViewControllerIcon.bounds.height / 2)
-        thirdMainViewControllerIcon.addSubview(icon)
-        
-        let thirdTabBarItemImage = thirdMainViewControllerIcon.asImage().withRenderingMode(.alwaysOriginal)
-        
-        firstNavigationController.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "goal"), tag: 0)
-        secondNavigationController.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "storage"), tag: 1)
-        thirdNavigationController.tabBarItem = UITabBarItem(title: "", image: thirdTabBarItemImage, tag: 2)
-        fourthNavigationController.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "report"), tag: 3)
-        fifthNavigationController.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "setting"), tag: 4)
-        
-        let tabBarAppearance = UITabBarAppearance()
-        tabBarAppearance.backgroundColor = .natural100
-
-        let tabBarController = UITabBarController()
-        tabBarController.viewControllers = [firstNavigationController,
-                                            secondNavigationController,
-                                            thirdNavigationController,
-                                            fourthNavigationController,
-                                            fifthNavigationController]
-        tabBarController.tabBar.unselectedItemTintColor = .natural70
-        tabBarController.tabBar.tintColor = .white
-        tabBarController.tabBar.backgroundColor = .natural100
-        tabBarController.tabBar.standardAppearance = tabBarAppearance
-
-        if #available(iOS 15.0, *) {
-            tabBarController.tabBar.scrollEdgeAppearance = tabBarAppearance
+        for name in iconNames {
+            guard let icon = UIImage(named: name) else {
+                fatalError("\(name) 이미지가 없습니다.")
+            }
+            icons.append(icon)
         }
+        
+        // tabBarController: thirdNC icon
+        let thirdNCIcon = UIView()
+        thirdNCIcon.frame = CGRect(x: 0, y: 0, width: 45, height: 38)
+        thirdNCIcon.backgroundColor = UIColor.primary100
+        thirdNCIcon.layer.cornerRadius = 10
+        thirdNCIcon.clipsToBounds = true
 
-        // tabBarController 높이 조절을 위한 뷰 추가
-        let navigationView = UIView()
-        navigationView.backgroundColor = UIColor.natural100
-        navigationView.addTopBorder(color: UIColor.natural80, thickness: 1)
-        navigationView.layer.shadowColor = UIColor.natural100.cgColor
-        navigationView.layer.shadowOpacity = 1
-        navigationView.layer.shadowOffset = CGSize(width: 0, height: -20)
-        navigationView.layer.shadowRadius = 20
-        navigationView.layer.shadowPath = UIBezierPath(rect: CGRect(x: -50, y: -20, width: (window?.bounds.width)!+100, height: (window?.bounds.height)!+100)).cgPath
-        
-        navigationView.translatesAutoresizingMaskIntoConstraints = false
-        window?.addSubview(navigationView)
-        
-        window?.rootViewController = tabBarController
-        
+        let icon = UIImageView(image: icons[2])
+        icon.frame = CGRect(x: 0, y: 0, width: 27, height: 27)
+        icon.center = CGPoint(x: thirdNCIcon.bounds.width / 2,
+                              y: thirdNCIcon.bounds.height / 2)
+        thirdNCIcon.addSubview(icon)
+
+        let thirdTabBarItemImage = thirdNCIcon.asImage().withRenderingMode(.alwaysOriginal)
+
+        // tabBarController: navigationController
+        let firstNC = CustomNavigationController.navigationControllerCreate(rootVC: goalMainVC, image: icons[0], tag: 0)
+        let secondNC = CustomNavigationController.navigationControllerCreate(rootVC: storageMainVC, image: icons[1], tag: 1)
+        let thirdNC = CustomNavigationController.navigationControllerCreate(rootVC: recordMainVC, image: thirdTabBarItemImage, tag: 2)
+        let fourthNC = CustomNavigationController.navigationControllerCreate(rootVC: reportMainVC, image: icons[3], tag: 3)
+        let fifthNC = CustomNavigationController.navigationControllerCreate(rootVC: settingMainVC, image: icons[4], tag: 4)
+
+        let navigationControllers = [firstNC, secondNC, thirdNC, fourthNC, fifthNC]
+        let tabBarController = CustomTabBarController.tabBarControllerCreate(VC: navigationControllers)
+
+        // tabBarController: height
+        let navigationHeightView = CustomTabBarController.tabBarHeightControllView()
+        navigationHeightView.translatesAutoresizingMaskIntoConstraints = false
+        tabBarController.view.addSubview(navigationHeightView)
+
         NSLayoutConstraint.activate([
-            navigationView.bottomAnchor.constraint(equalTo: window!.safeAreaLayoutGuide.bottomAnchor),
-            navigationView.leadingAnchor.constraint(equalTo: window!.safeAreaLayoutGuide.leadingAnchor),
-            navigationView.trailingAnchor.constraint(equalTo: window!.safeAreaLayoutGuide.trailingAnchor),
-            navigationView.heightAnchor.constraint(equalToConstant: 60)
+            navigationHeightView.bottomAnchor.constraint(equalTo: tabBarController.tabBar.topAnchor),
+            navigationHeightView.leadingAnchor.constraint(equalTo: tabBarController.view.leadingAnchor),
+            navigationHeightView.trailingAnchor.constraint(equalTo: tabBarController.view.trailingAnchor),
+            navigationHeightView.heightAnchor.constraint(equalToConstant: 10)
         ])
-        
+
+        window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
     }
     

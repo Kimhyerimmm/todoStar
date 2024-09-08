@@ -15,6 +15,7 @@
 		BF1CE6BD2C8AA352008AE7F7 /* S-CoreDream-5Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = BF1CE6B92C8AA352008AE7F7 /* S-CoreDream-5Medium.otf */; };
 		BF1CE6BE2C8AA352008AE7F7 /* S-CoreDream-4Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = BF1CE6BA2C8AA352008AE7F7 /* S-CoreDream-4Regular.otf */; };
 		BF1CE6C02C8AD85A008AE7F7 /* GoalListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1CE6BF2C8AD85A008AE7F7 /* GoalListCell.swift */; };
+		BF1CE6C42C8DA1B3008AE7F7 /* TabBarControllerStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1CE6C32C8DA1B3008AE7F7 /* TabBarControllerStyle.swift */; };
 		BFC7F13E2C7EECB100EEA14F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F13D2C7EECB100EEA14F /* AppDelegate.swift */; };
 		BFC7F1402C7EECB100EEA14F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F13F2C7EECB100EEA14F /* SceneDelegate.swift */; };
 		BFC7F1422C7EECB100EEA14F /* GoalMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1412C7EECB100EEA14F /* GoalMainViewController.swift */; };
@@ -54,6 +55,7 @@
 		BF1CE6B92C8AA352008AE7F7 /* S-CoreDream-5Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "S-CoreDream-5Medium.otf"; sourceTree = "<group>"; };
 		BF1CE6BA2C8AA352008AE7F7 /* S-CoreDream-4Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "S-CoreDream-4Regular.otf"; sourceTree = "<group>"; };
 		BF1CE6BF2C8AD85A008AE7F7 /* GoalListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalListCell.swift; sourceTree = "<group>"; };
+		BF1CE6C32C8DA1B3008AE7F7 /* TabBarControllerStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarControllerStyle.swift; sourceTree = "<group>"; };
 		BFC7F13A2C7EECB100EEA14F /* todoStar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = todoStar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFC7F13D2C7EECB100EEA14F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFC7F13F2C7EECB100EEA14F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 				BFC7F1832C815DCA00EEA14F /* DropDownStyle.swift */,
 				BFC7F1852C834A7300EEA14F /* SegmentedControlStyle.swift */,
 				BFC7F1AA2C85B21100EEA14F /* NavigationBarStyle.swift */,
+				BF1CE6C32C8DA1B3008AE7F7 /* TabBarControllerStyle.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 			files = (
 				BFC7F1B32C87032A00EEA14F /* CurrentGoalListCell.swift in Sources */,
 				BFC7F1822C8070AB00EEA14F /* UIViewController+Extension.swift in Sources */,
+				BF1CE6C42C8DA1B3008AE7F7 /* TabBarControllerStyle.swift in Sources */,
 				BFC7F17A2C800CE500EEA14F /* UIFont+Extension.swift in Sources */,
 				BFC7F1422C7EECB100EEA14F /* GoalMainViewController.swift in Sources */,
 				BFC7F1962C84A1FB00EEA14F /* ReportMainViewController.swift in Sources */,

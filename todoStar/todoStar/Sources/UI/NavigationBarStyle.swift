@@ -62,4 +62,11 @@ class CustomNavigationController: UINavigationController {
 
         return navigationItem
     }
+
+    static func navigationControllerCreate(rootVC: UIViewController, image: UIImage, tag: Int) -> UINavigationController {
+        let NV = CustomNavigationController(rootViewController: rootVC)
+        NV.tabBarItem = UITabBarItem(title: "", image: image, tag: tag)
+
+        return NV
+    }
 }
