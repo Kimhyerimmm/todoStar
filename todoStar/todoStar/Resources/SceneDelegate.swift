@@ -20,8 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.backgroundColor = UIColor.natural100
         
         // TODO: 네비게이션 바 스타일 변경(아이콘 색상 변경 / 타이틀 빼기)
-        UINavigationBar.appearance().tintColor = .white
-        
+
         // 네비게이션 컨트롤러 연결 및 스타일 설정
         let goalMainViewController = GoalMainViewController()
         let storageMainViewController = StorageMainViewController()
@@ -55,6 +54,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         fourthNavigationController.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "report"), tag: 3)
         fifthNavigationController.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "setting"), tag: 4)
         
+        let tabBarAppearance = UITabBarAppearance()
+        tabBarAppearance.backgroundColor = .natural100
+
         let tabBarController = UITabBarController()
         tabBarController.viewControllers = [firstNavigationController,
                                             secondNavigationController,
@@ -64,7 +66,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         tabBarController.tabBar.unselectedItemTintColor = .natural70
         tabBarController.tabBar.tintColor = .white
         tabBarController.tabBar.backgroundColor = .natural100
-        
+        tabBarController.tabBar.standardAppearance = tabBarAppearance
+
+        if #available(iOS 15.0, *) {
+            tabBarController.tabBar.scrollEdgeAppearance = tabBarAppearance
+        }
+
         // tabBarController 높이 조절을 위한 뷰 추가
         let navigationView = UIView()
         navigationView.backgroundColor = UIColor.natural100

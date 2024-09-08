@@ -45,6 +45,12 @@ class GoalListViewController: UIViewController {
             }
         )
         self.navigationItem.rightBarButtonItems = rightBarButtonItem
+
+        let appearanceBar = UINavigationBarAppearance()
+        appearanceBar.configureWithOpaqueBackground()  // 반투명 효과 제거
+        appearanceBar.backgroundColor = .natural100 // 원하는 색상
+        navigationController?.navigationBar.standardAppearance = appearanceBar
+        navigationController?.navigationBar.scrollEdgeAppearance = appearanceBar
     }
 
     // MARK: - Method
