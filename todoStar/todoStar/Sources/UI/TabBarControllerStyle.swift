@@ -7,9 +7,22 @@
 
 import UIKit
 
-class CustomTabBarController: UITabBarController {
-    static func tabBarControllerCreate(VC: [UIViewController]) -> UITabBarController {
-        let tabBarController = UITabBarController()
+class CustomTabBarController: UITabBarController, UITabBarControllerDelegate {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.delegate = self
+    }
+
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        if let navController = viewController as? UINavigationController {
+            // 네비게이션 스택을 루트 뷰컨트롤러로 pop
+            navController.popToRootViewController(animated: false)
+        }
+        return true
+    }
+
+    static func tabBarControllerCreate(VC: [UIViewController]) -> CustomTabBarController {
+        let tabBarController = CustomTabBarController()
         tabBarController.viewControllers = VC
 
         let tabBarAppearance = UITabBarAppearance()

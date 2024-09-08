@@ -69,4 +69,11 @@ class CustomNavigationController: UINavigationController {
 
         return NV
     }
+
+    static func clearNavigationBarBackgroundColor(_ vc: UIViewController) {
+        vc.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        vc.navigationController?.navigationBar.shadowImage = UIImage()
+        vc.navigationController?.navigationBar.isTranslucent = true
+        vc.navigationController?.navigationBar.backgroundColor = .clear
+        }
 }

@@ -25,7 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let recordMainVC = RecordMainViewController()
         let reportMainVC = ReportMainViewController()
         let settingMainVC = SettingMainViewController()
-        
+
         // tabBarController: icon
         let iconNames = ["goal", "storage", "record", "report", "setting"]
         var icons: [UIImage] = []

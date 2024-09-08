@@ -89,8 +89,8 @@ class GoalMainView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
     // MARK: 주간 현황
     func weeklyStatusView() -> UIView {
         let view = UIView()
-        view.backgroundColor = UIColor.natural90
-        
+        view.backgroundColor = UIColor.natural100
+
         let weeklyStatusView = weeklyStatus()
         
         addSubview(view)
@@ -146,7 +146,7 @@ class GoalMainView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
         let emotion: String
         // TODO: 조건에 따라 이미지 들어오도록
         //dailyGoal.image = UIImage(named: emotion)
-        dailyGoal.backgroundColor = .natural80
+        dailyGoal.backgroundColor = .natural90
         dailyGoal.layer.cornerRadius = 20
         dailyGoal.clipsToBounds = true
         

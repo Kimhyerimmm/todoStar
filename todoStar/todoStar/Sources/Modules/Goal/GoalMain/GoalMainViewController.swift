@@ -21,8 +21,7 @@ class GoalMainViewController: UIViewController, GoalMainViewDelegate {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
-        // 데이터를 다시 로드
+        view.backgroundColor = .natural90
         goalMainViewModel.loadGoal()
     }
 
