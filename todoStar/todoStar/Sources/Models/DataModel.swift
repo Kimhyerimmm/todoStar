@@ -49,14 +49,14 @@ class MiddleGoalDataModel: Identifiable, CustomStringConvertible {
     var createdDate: Date
     var completionGoal: Bool
 
-    init(middleGoalId: UUID, middleGoal: String, smallGoal: String, goalPeriod: Int, goalStatus: Int = 0, createdDate: Date) {
+    init(middleGoalId: UUID, middleGoal: String, smallGoal: String, goalPeriod: Int, goalStatus: Int = 0, createdDate: Date, completionGoal: Bool = false) {
         self.middleGoalId = middleGoalId
         self.middleGoal = middleGoal
         self.smallGoal = smallGoal
         self.goalPeriod = goalPeriod
         self.goalStatus = goalStatus
         self.createdDate = createdDate
-        self.completionGoal = (goalPeriod == goalStatus)
+        self.completionGoal = completionGoal
     }
 
     var description: String {

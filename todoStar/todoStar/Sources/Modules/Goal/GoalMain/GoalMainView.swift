@@ -209,7 +209,7 @@ class GoalMainView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CurrentGoalListCell.identifier, for: indexPath) as! CurrentGoalListCell
         let model = viewModel.currentGoals[indexPath.item]
-        cell.config(with: model)
+        cell.model(with: model)
         return cell
     }
 }

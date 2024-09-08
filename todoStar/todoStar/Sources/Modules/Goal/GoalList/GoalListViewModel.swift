@@ -13,6 +13,7 @@ struct GoalListModel {
     let middleGoalCount: Int
     let middleGoalCompletion: Int
     let completionGoal: Bool
+    let importance: String
 }
 
 class GoalListViewModel {
@@ -27,14 +28,15 @@ class GoalListViewModel {
     func loadGoal() {
         let goalData = shareData.getGoalData()
 
-        let progressStatusGoals = goalData.filter { $0.progressStatus }
+        let progressStatusGoals = goalData.filter { $0.completionGoal == false }
 
         self.goalLists = progressStatusGoals.map { goal in
             GoalListModel(progressStatus: goal.progressStatus,
                           lastGoal: goal.lastGoal,
                           middleGoalCount: goal.middleGoal.count,
                           middleGoalCompletion: goal.middleGoal.filter { $0.completionGoal }.count,
-                          completionGoal: goal.completionGoal)
+                          completionGoal: goal.completionGoal,
+                          importance: goal.importance)
         }
 
     }

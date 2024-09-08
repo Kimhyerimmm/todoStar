@@ -90,7 +90,7 @@ class CurrentGoalListCell: UICollectionViewCell {
     
     // 셀 내부 정보
     // 스타일 정리 및 내용 추가
-    func config(with model: CurrentGoalModel) {
+    func model(with model: CurrentGoalModel) {
         configureLabel(currentSmallGoal, text: model.smallGoal, font: .subtitleMedium(), textColor: .white)
         
         configureSection(in: currentMiddleGoal,

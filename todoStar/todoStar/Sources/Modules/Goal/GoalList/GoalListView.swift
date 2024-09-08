@@ -124,11 +124,13 @@ class GoalListView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
 
     // MARK: - Data Source
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return 10
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GoalListCell.identifier, for: indexPath) as! GoalListCell
+        let model = viewModel.goalLists[indexPath.item]
+        cell.model(with: model)
 
         return cell
     }
