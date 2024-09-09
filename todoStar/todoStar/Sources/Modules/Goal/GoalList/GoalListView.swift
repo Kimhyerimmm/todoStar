@@ -39,6 +39,7 @@ class GoalListView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
         highCollectionListView.reloadData()
         middleCollectionListView.reloadData()
         rowCollectionListView.reloadData()
+        self.layoutIfNeeded()
     }
 
     required init?(coder: NSCoder) {
