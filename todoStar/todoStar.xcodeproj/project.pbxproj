@@ -16,6 +16,9 @@
 		BF1CE6BE2C8AA352008AE7F7 /* S-CoreDream-4Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = BF1CE6BA2C8AA352008AE7F7 /* S-CoreDream-4Regular.otf */; };
 		BF1CE6C02C8AD85A008AE7F7 /* GoalListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1CE6BF2C8AD85A008AE7F7 /* GoalListCell.swift */; };
 		BF1CE6C42C8DA1B3008AE7F7 /* TabBarControllerStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1CE6C32C8DA1B3008AE7F7 /* TabBarControllerStyle.swift */; };
+		BF1CE6CE2C8EDC8A008AE7F7 /* GoalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1CE6CD2C8EDC8A008AE7F7 /* GoalDetailViewController.swift */; };
+		BF1CE6D02C8EDC9A008AE7F7 /* GoalDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1CE6CF2C8EDC9A008AE7F7 /* GoalDetailView.swift */; };
+		BF1CE6D22C8EDCA7008AE7F7 /* GoalDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1CE6D12C8EDCA7008AE7F7 /* GoalDetailViewModel.swift */; };
 		BFC7F13E2C7EECB100EEA14F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F13D2C7EECB100EEA14F /* AppDelegate.swift */; };
 		BFC7F1402C7EECB100EEA14F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F13F2C7EECB100EEA14F /* SceneDelegate.swift */; };
 		BFC7F1422C7EECB100EEA14F /* GoalMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1412C7EECB100EEA14F /* GoalMainViewController.swift */; };
@@ -56,6 +59,9 @@
 		BF1CE6BA2C8AA352008AE7F7 /* S-CoreDream-4Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "S-CoreDream-4Regular.otf"; sourceTree = "<group>"; };
 		BF1CE6BF2C8AD85A008AE7F7 /* GoalListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalListCell.swift; sourceTree = "<group>"; };
 		BF1CE6C32C8DA1B3008AE7F7 /* TabBarControllerStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarControllerStyle.swift; sourceTree = "<group>"; };
+		BF1CE6CD2C8EDC8A008AE7F7 /* GoalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalDetailViewController.swift; sourceTree = "<group>"; };
+		BF1CE6CF2C8EDC9A008AE7F7 /* GoalDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalDetailView.swift; sourceTree = "<group>"; };
+		BF1CE6D12C8EDCA7008AE7F7 /* GoalDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalDetailViewModel.swift; sourceTree = "<group>"; };
 		BFC7F13A2C7EECB100EEA14F /* todoStar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = todoStar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFC7F13D2C7EECB100EEA14F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFC7F13F2C7EECB100EEA14F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +125,16 @@
 				BF1CE6BF2C8AD85A008AE7F7 /* GoalListCell.swift */,
 			);
 			path = GoalList;
+			sourceTree = "<group>";
+		};
+		BF1CE6CC2C8EDC76008AE7F7 /* GoalDetail */ = {
+			isa = PBXGroup;
+			children = (
+				BF1CE6CD2C8EDC8A008AE7F7 /* GoalDetailViewController.swift */,
+				BF1CE6CF2C8EDC9A008AE7F7 /* GoalDetailView.swift */,
+				BF1CE6D12C8EDCA7008AE7F7 /* GoalDetailViewModel.swift */,
+			);
+			path = GoalDetail;
 			sourceTree = "<group>";
 		};
 		BFC7F1312C7EECB100EEA14F = {
@@ -242,6 +258,7 @@
 		BFC7F18D2C849EB100EEA14F /* Goal */ = {
 			isa = PBXGroup;
 			children = (
+				BF1CE6CC2C8EDC76008AE7F7 /* GoalDetail */,
 				BF1CE6B02C88924D008AE7F7 /* GoalList */,
 				BF1CE6AF2C889238008AE7F7 /* GoalMain */,
 			);
@@ -356,6 +373,7 @@
 			files = (
 				BFC7F1B32C87032A00EEA14F /* CurrentGoalListCell.swift in Sources */,
 				BFC7F1822C8070AB00EEA14F /* UIViewController+Extension.swift in Sources */,
+				BF1CE6D22C8EDCA7008AE7F7 /* GoalDetailViewModel.swift in Sources */,
 				BF1CE6C42C8DA1B3008AE7F7 /* TabBarControllerStyle.swift in Sources */,
 				BFC7F17A2C800CE500EEA14F /* UIFont+Extension.swift in Sources */,
 				BFC7F1422C7EECB100EEA14F /* GoalMainViewController.swift in Sources */,
@@ -366,8 +384,10 @@
 				BFC7F1AF2C869C3A00EEA14F /* GoalMainView.swift in Sources */,
 				BFC7F1762C7F0FEE00EEA14F /* UIImage+Extension.swift in Sources */,
 				BF1CE6C02C8AD85A008AE7F7 /* GoalListCell.swift in Sources */,
+				BF1CE6D02C8EDC9A008AE7F7 /* GoalDetailView.swift in Sources */,
 				BFC7F1912C849FE700EEA14F /* StorageMainViewController.swift in Sources */,
 				BFC7F19D2C84AA7800EEA14F /* UIView+Extension.swift in Sources */,
+				BF1CE6CE2C8EDC8A008AE7F7 /* GoalDetailViewController.swift in Sources */,
 				BFC7F18C2C84395B00EEA14F /* DataModel.swift in Sources */,
 				BFC7F1842C815DCA00EEA14F /* DropDownStyle.swift in Sources */,
 				BF1CE6B62C889296008AE7F7 /* GoalListViewModel.swift in Sources */,

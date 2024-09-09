@@ -15,6 +15,7 @@ struct GoalListModel {
     let completionGoal: Bool
     let importance: String
     let createdDate: Date
+    let goalId: UUID
 }
 
 class GoalListViewModel {
@@ -41,7 +42,9 @@ class GoalListViewModel {
                           middleGoalCount: goal.middleGoal.count,
                           middleGoalCompletion: goal.middleGoal.filter { $0.completionGoal }.count,
                           completionGoal: goal.completionGoal,
-                          importance: goal.importance, createdDate: goal.createdDate)
+                          importance: goal.importance,
+                          createdDate: goal.createdDate,
+                          goalId: goal.goalId)
         }
     }
 
