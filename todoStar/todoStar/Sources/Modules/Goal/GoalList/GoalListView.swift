@@ -259,14 +259,13 @@ class GoalListView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
         }
 
         if let goalId = selectedGoalId {
+            // goalId 전달
+            let detailViewModel = GoalDetailViewModel(goalId: goalId)
             // 뷰 이동
-            let goalDetailVC = GoalDetailViewController()
+            let goalDetailVC = GoalDetailViewController(goalDetailViewModel: detailViewModel)
             if let viewController = findViewController() {
                 viewController.navigationController?.pushViewController(goalDetailVC, animated: false)
             }
-
-            // goalId 전달
-            
         }
     }
 

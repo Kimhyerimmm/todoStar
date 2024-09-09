@@ -8,5 +8,24 @@
 import Foundation
 
 struct GoalDetailModel {
-    let goalId: UUID
+
+}
+
+class GoalDetailViewModel {
+    private let goalId: UUID
+    private var goalData: GoalRecordDataModel?
+
+    private let shareData = ShareData.shared
+
+    init(goalId: UUID) {
+        self.goalId = goalId
+        self.goalData = findGoalData(goalId)
+    }
+
+    private func findGoalData(_ id: UUID) -> GoalRecordDataModel? {
+        let goalData = shareData.getGoalData()
+        let findGoal = goalData.first { $0.goalId == id }
+
+        return findGoal
+    }
 }
