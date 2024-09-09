@@ -22,7 +22,9 @@ class GoalListView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
     private let importanceRowView = UIView()
     private let rowTitle = UILabel()
     private var rowCollectionListView: UICollectionView!
-    // MARK: Life Cycle
+
+    
+    // MARK: - Life Cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -101,20 +103,26 @@ class GoalListView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
     func subView() {
         collectionViewTitle(view: highTitle, text: "반드시 해야 해요!")
         highCollectionListView = collectionViewList()
+
         collectionViewTitle(view: middleTitle, text: "해야 하지만 급하지 않아요.")
         middleCollectionListView = collectionViewList()
+
         collectionViewTitle(view: rowTitle, text: "하고 싶지만 급하지 않아요.")
         rowCollectionListView = collectionViewList()
+
         importanceHighView.addSubview(highTitle)
         importanceHighView.addSubview(highCollectionListView)
         importanceMiddleView.addSubview(middleTitle)
         importanceMiddleView.addSubview(middleCollectionListView)
         importanceRowView.addSubview(rowTitle)
         importanceRowView.addSubview(rowCollectionListView)
+
         highTitle.translatesAutoresizingMaskIntoConstraints = false
         highCollectionListView.translatesAutoresizingMaskIntoConstraints = false
+
         middleTitle.translatesAutoresizingMaskIntoConstraints = false
         middleCollectionListView.translatesAutoresizingMaskIntoConstraints = false
+
         rowTitle.translatesAutoresizingMaskIntoConstraints = false
         rowCollectionListView.translatesAutoresizingMaskIntoConstraints = false
 

@@ -25,7 +25,7 @@ class GoalDetailViewController: UIViewController {
 
     // MARK: - Life Cycle
     override func loadView() {
-        self.view = goalDetailView
+        self.view = GoalDetailView(goalDetailViewModel: goalDetailViewModel)
     }
 
     override func viewDidLoad() {

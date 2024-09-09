@@ -19,6 +19,7 @@
 		BF1CE6CE2C8EDC8A008AE7F7 /* GoalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1CE6CD2C8EDC8A008AE7F7 /* GoalDetailViewController.swift */; };
 		BF1CE6D02C8EDC9A008AE7F7 /* GoalDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1CE6CF2C8EDC9A008AE7F7 /* GoalDetailView.swift */; };
 		BF1CE6D22C8EDCA7008AE7F7 /* GoalDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1CE6D12C8EDCA7008AE7F7 /* GoalDetailViewModel.swift */; };
+		BF1CE6D42C8F135B008AE7F7 /* GoalDetailMiddleGoalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1CE6D32C8F135B008AE7F7 /* GoalDetailMiddleGoalCell.swift */; };
 		BFC7F13E2C7EECB100EEA14F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F13D2C7EECB100EEA14F /* AppDelegate.swift */; };
 		BFC7F1402C7EECB100EEA14F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F13F2C7EECB100EEA14F /* SceneDelegate.swift */; };
 		BFC7F1422C7EECB100EEA14F /* GoalMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1412C7EECB100EEA14F /* GoalMainViewController.swift */; };
@@ -62,6 +63,7 @@
 		BF1CE6CD2C8EDC8A008AE7F7 /* GoalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalDetailViewController.swift; sourceTree = "<group>"; };
 		BF1CE6CF2C8EDC9A008AE7F7 /* GoalDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalDetailView.swift; sourceTree = "<group>"; };
 		BF1CE6D12C8EDCA7008AE7F7 /* GoalDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalDetailViewModel.swift; sourceTree = "<group>"; };
+		BF1CE6D32C8F135B008AE7F7 /* GoalDetailMiddleGoalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalDetailMiddleGoalCell.swift; sourceTree = "<group>"; };
 		BFC7F13A2C7EECB100EEA14F /* todoStar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = todoStar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFC7F13D2C7EECB100EEA14F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFC7F13F2C7EECB100EEA14F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				BF1CE6CD2C8EDC8A008AE7F7 /* GoalDetailViewController.swift */,
 				BF1CE6CF2C8EDC9A008AE7F7 /* GoalDetailView.swift */,
 				BF1CE6D12C8EDCA7008AE7F7 /* GoalDetailViewModel.swift */,
+				BF1CE6D32C8F135B008AE7F7 /* GoalDetailMiddleGoalCell.swift */,
 			);
 			path = GoalDetail;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 				BFC7F1A52C8597C100EEA14F /* ShareData.swift in Sources */,
 				BFC7F1932C84A00300EEA14F /* RecordMainViewController.swift in Sources */,
 				BFC7F1B12C869C7300EEA14F /* GoalMainViewModel.swift in Sources */,
+				BF1CE6D42C8F135B008AE7F7 /* GoalDetailMiddleGoalCell.swift in Sources */,
 				BFC7F1B52C87375400EEA14F /* UILabel+Extension.swift in Sources */,
 				BFC7F17C2C802D0100EEA14F /* TextFieldStyle.swift in Sources */,
 			);
