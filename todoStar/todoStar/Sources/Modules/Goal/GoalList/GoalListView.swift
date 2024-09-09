@@ -44,6 +44,7 @@ class GoalListView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
         scrollView.addSubview(contentView)
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         contentView.translatesAutoresizingMaskIntoConstraints = false
+
         // 오토 레이아웃(scrollView)
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: self.topAnchor),
@@ -51,6 +52,7 @@ class GoalListView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
             scrollView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             scrollView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
+
         // 오토 레이아웃(contentView)
         NSLayoutConstraint.activate([
             contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
@@ -59,12 +61,15 @@ class GoalListView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
             contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
         ])
+
         setupContentView()
     }
+
     func setupContentView() {
         contentView.addSubview(importanceHighView)
         contentView.addSubview(importanceMiddleView)
         contentView.addSubview(importanceRowView)
+
         importanceHighView.translatesAutoresizingMaskIntoConstraints = false
         importanceMiddleView.translatesAutoresizingMaskIntoConstraints = false
         importanceRowView.translatesAutoresizingMaskIntoConstraints = false
@@ -112,8 +117,10 @@ class GoalListView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
 
         importanceHighView.addSubview(highTitle)
         importanceHighView.addSubview(highCollectionListView)
+
         importanceMiddleView.addSubview(middleTitle)
         importanceMiddleView.addSubview(middleCollectionListView)
+
         importanceRowView.addSubview(rowTitle)
         importanceRowView.addSubview(rowCollectionListView)
 
@@ -136,6 +143,7 @@ class GoalListView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
             highTitle.trailingAnchor.constraint(equalTo: importanceHighView.trailingAnchor),
             highTitle.heightAnchor.constraint(equalToConstant: 20)
         ])
+
         // 오토 레이아웃(highCollectionListView)
         NSLayoutConstraint.activate([
             highCollectionListView.topAnchor.constraint(equalTo: highTitle.bottomAnchor, constant: 10),
@@ -151,6 +159,7 @@ class GoalListView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
             middleTitle.trailingAnchor.constraint(equalTo: importanceMiddleView.trailingAnchor),
             middleTitle.heightAnchor.constraint(equalToConstant: 20)
         ])
+
         // 오토 레이아웃(middleCollectionListView)
         NSLayoutConstraint.activate([
             middleCollectionListView.topAnchor.constraint(equalTo: middleTitle.bottomAnchor, constant: 10),
@@ -166,6 +175,7 @@ class GoalListView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
             rowTitle.trailingAnchor.constraint(equalTo: importanceRowView.trailingAnchor),
             rowTitle.heightAnchor.constraint(equalToConstant: 20)
         ])
+
         // 오토 레이아웃(rowCollectionListView)
         NSLayoutConstraint.activate([
             rowCollectionListView.topAnchor.constraint(equalTo: rowTitle.bottomAnchor, constant: 10),
@@ -180,6 +190,7 @@ class GoalListView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
         view.font = .bodySmallRegular()
         view.textColor = .natural40
     }
+
     func collectionViewList() -> UICollectionView {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -232,6 +243,7 @@ class GoalListView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
             return 0
         }
     }
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GoalListCell.identifier, for: indexPath) as! GoalListCell
 

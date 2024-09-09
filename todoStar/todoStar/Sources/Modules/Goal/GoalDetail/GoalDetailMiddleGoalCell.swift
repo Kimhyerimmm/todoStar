@@ -9,5 +9,5 @@ import UIKit
 
 class GoalDetailMiddleGoalCell: UICollectionViewCell {
     // MARK: - Property
-    let identifier = "goalDetailMiddleGoalCell"
+    static let identifier = "goalDetailMiddleGoalCell"
 }
