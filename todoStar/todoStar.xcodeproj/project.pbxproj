@@ -16,9 +16,6 @@
 		BF1CE6BE2C8AA352008AE7F7 /* S-CoreDream-4Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = BF1CE6BA2C8AA352008AE7F7 /* S-CoreDream-4Regular.otf */; };
 		BF1CE6C02C8AD85A008AE7F7 /* GoalListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1CE6BF2C8AD85A008AE7F7 /* GoalListCell.swift */; };
 		BF1CE6C42C8DA1B3008AE7F7 /* TabBarControllerStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1CE6C32C8DA1B3008AE7F7 /* TabBarControllerStyle.swift */; };
-		BF1CE6C72C8EC1F3008AE7F7 /* GoalEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1CE6C62C8EC1F3008AE7F7 /* GoalEditView.swift */; };
-		BF1CE6C92C8EC1FF008AE7F7 /* GoalEditViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1CE6C82C8EC1FF008AE7F7 /* GoalEditViewViewController.swift */; };
-		BF1CE6CB2C8EC20A008AE7F7 /* GoalEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1CE6CA2C8EC20A008AE7F7 /* GoalEditViewModel.swift */; };
 		BFC7F13E2C7EECB100EEA14F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F13D2C7EECB100EEA14F /* AppDelegate.swift */; };
 		BFC7F1402C7EECB100EEA14F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F13F2C7EECB100EEA14F /* SceneDelegate.swift */; };
 		BFC7F1422C7EECB100EEA14F /* GoalMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1412C7EECB100EEA14F /* GoalMainViewController.swift */; };
@@ -59,9 +56,6 @@
 		BF1CE6BA2C8AA352008AE7F7 /* S-CoreDream-4Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "S-CoreDream-4Regular.otf"; sourceTree = "<group>"; };
 		BF1CE6BF2C8AD85A008AE7F7 /* GoalListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalListCell.swift; sourceTree = "<group>"; };
 		BF1CE6C32C8DA1B3008AE7F7 /* TabBarControllerStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarControllerStyle.swift; sourceTree = "<group>"; };
-		BF1CE6C62C8EC1F3008AE7F7 /* GoalEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalEditView.swift; sourceTree = "<group>"; };
-		BF1CE6C82C8EC1FF008AE7F7 /* GoalEditViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalEditViewViewController.swift; sourceTree = "<group>"; };
-		BF1CE6CA2C8EC20A008AE7F7 /* GoalEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalEditViewModel.swift; sourceTree = "<group>"; };
 		BFC7F13A2C7EECB100EEA14F /* todoStar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = todoStar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFC7F13D2C7EECB100EEA14F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFC7F13F2C7EECB100EEA14F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -125,16 +119,6 @@
 				BF1CE6BF2C8AD85A008AE7F7 /* GoalListCell.swift */,
 			);
 			path = GoalList;
-			sourceTree = "<group>";
-		};
-		BF1CE6C52C8EC1D1008AE7F7 /* GoalEdit */ = {
-			isa = PBXGroup;
-			children = (
-				BF1CE6C62C8EC1F3008AE7F7 /* GoalEditView.swift */,
-				BF1CE6C82C8EC1FF008AE7F7 /* GoalEditViewViewController.swift */,
-				BF1CE6CA2C8EC20A008AE7F7 /* GoalEditViewModel.swift */,
-			);
-			path = GoalEdit;
 			sourceTree = "<group>";
 		};
 		BFC7F1312C7EECB100EEA14F = {
@@ -258,7 +242,6 @@
 		BFC7F18D2C849EB100EEA14F /* Goal */ = {
 			isa = PBXGroup;
 			children = (
-				BF1CE6C52C8EC1D1008AE7F7 /* GoalEdit */,
 				BF1CE6B02C88924D008AE7F7 /* GoalList */,
 				BF1CE6AF2C889238008AE7F7 /* GoalMain */,
 			);
@@ -383,13 +366,11 @@
 				BFC7F1AF2C869C3A00EEA14F /* GoalMainView.swift in Sources */,
 				BFC7F1762C7F0FEE00EEA14F /* UIImage+Extension.swift in Sources */,
 				BF1CE6C02C8AD85A008AE7F7 /* GoalListCell.swift in Sources */,
-				BF1CE6C92C8EC1FF008AE7F7 /* GoalEditViewViewController.swift in Sources */,
 				BFC7F1912C849FE700EEA14F /* StorageMainViewController.swift in Sources */,
 				BFC7F19D2C84AA7800EEA14F /* UIView+Extension.swift in Sources */,
 				BFC7F18C2C84395B00EEA14F /* DataModel.swift in Sources */,
 				BFC7F1842C815DCA00EEA14F /* DropDownStyle.swift in Sources */,
 				BF1CE6B62C889296008AE7F7 /* GoalListViewModel.swift in Sources */,
-				BF1CE6C72C8EC1F3008AE7F7 /* GoalEditView.swift in Sources */,
 				BFC7F1AD2C85C03700EEA14F /* NotificationViewController.swift in Sources */,
 				BF1CE6B42C889280008AE7F7 /* GoalListView.swift in Sources */,
 				BFC7F1782C7F18ED00EEA14F /* ButtonStyle.swift in Sources */,
@@ -398,7 +379,6 @@
 				BFC7F1A32C8574E300EEA14F /* DataController.swift in Sources */,
 				BFC7F19B2C84A26C00EEA14F /* SettingMainViewController.swift in Sources */,
 				BFC7F1402C7EECB100EEA14F /* SceneDelegate.swift in Sources */,
-				BF1CE6CB2C8EC20A008AE7F7 /* GoalEditViewModel.swift in Sources */,
 				BF1CE6B22C88926E008AE7F7 /* GoalListViewController.swift in Sources */,
 				BFC7F1A52C8597C100EEA14F /* ShareData.swift in Sources */,
 				BFC7F1932C84A00300EEA14F /* RecordMainViewController.swift in Sources */,
