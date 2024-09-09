@@ -239,8 +239,35 @@ class GoalListView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
         }
         return cell
     }
+
+
+    // MARK: - Delegate
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.frame.width
         return CGSize(width: width, height: 120)
     }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        var selectedGoalId: UUID?
+
+        if collectionView == highCollectionListView {
+            selectedGoalId = viewModel.highData[indexPath.item].goalId
+        } else if collectionView == middleCollectionListView {
+            selectedGoalId = viewModel.middleData[indexPath.item].goalId
+        } else if collectionView == rowCollectionListView {
+            selectedGoalId = viewModel.rowData[indexPath.item].goalId
+        }
+
+        if let goalId = selectedGoalId {
+            // 뷰 이동
+            let goalDetailVC = GoalDetailViewController()
+            if let viewController = findViewController() {
+                viewController.navigationController?.pushViewController(goalDetailVC, animated: false)
+            }
+
+            // goalId 전달
+            
+        }
+    }
+
 }

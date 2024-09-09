@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+struct GoalDetailModel {
+    let goalId: UUID
+}
