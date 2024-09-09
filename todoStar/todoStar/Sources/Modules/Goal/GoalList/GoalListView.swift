@@ -4,33 +4,24 @@
 //
 //  Created by 김혜림 on 9/4/24.
 //
-
 import UIKit
-
 class GoalListView: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-
     // MARK: - Property
     private let viewModel = GoalListViewModel()
-
     private let scrollView = UIScrollView()
     private let contentView = UIView()
-
     // 중요도 높음 리스트
     private let importanceHighView = UIView()
     private let highTitle = UILabel()
     private var highCollectionListView: UICollectionView!
-
     // 중요도 중간 리스트
     private let importanceMiddleView = UIView()
     private let middleTitle = UILabel()
     private var middleCollectionListView: UICollectionView!
-
     // 중요도 낮음 리스트
     private let importanceRowView = UIView()
     private let rowTitle = UILabel()
     private var rowCollectionListView: UICollectionView!
-
-
     // MARK: Life Cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -39,23 +30,18 @@ class GoalListView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
         highCollectionListView.reloadData()
         middleCollectionListView.reloadData()
         rowCollectionListView.reloadData()
-        self.layoutIfNeeded()
     }
-
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setupView()
     }
-    
+
     // MARK: - Setup Method
     func setupView() {
-
         addSubview(scrollView)
         scrollView.addSubview(contentView)
-
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         contentView.translatesAutoresizingMaskIntoConstraints = false
-
         // 오토 레이아웃(scrollView)
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: self.topAnchor),
@@ -63,7 +49,6 @@ class GoalListView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
             scrollView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             scrollView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
-
         // 오토 레이아웃(contentView)
         NSLayoutConstraint.activate([
             contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
@@ -72,15 +57,12 @@ class GoalListView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
             contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
         ])
-
         setupContentView()
     }
-
     func setupContentView() {
         contentView.addSubview(importanceHighView)
         contentView.addSubview(importanceMiddleView)
         contentView.addSubview(importanceRowView)
-
         importanceHighView.translatesAutoresizingMaskIntoConstraints = false
         importanceMiddleView.translatesAutoresizingMaskIntoConstraints = false
         importanceRowView.translatesAutoresizingMaskIntoConstraints = false
@@ -115,34 +97,24 @@ class GoalListView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
 
         subView()
     }
-
-
     // MARK: - View
     func subView() {
         collectionViewTitle(view: highTitle, text: "반드시 해야 해요!")
         highCollectionListView = collectionViewList()
-
         collectionViewTitle(view: middleTitle, text: "해야 하지만 급하지 않아요.")
         middleCollectionListView = collectionViewList()
-
         collectionViewTitle(view: rowTitle, text: "하고 싶지만 급하지 않아요.")
         rowCollectionListView = collectionViewList()
-
         importanceHighView.addSubview(highTitle)
         importanceHighView.addSubview(highCollectionListView)
-
         importanceMiddleView.addSubview(middleTitle)
         importanceMiddleView.addSubview(middleCollectionListView)
-
         importanceRowView.addSubview(rowTitle)
         importanceRowView.addSubview(rowCollectionListView)
-
         highTitle.translatesAutoresizingMaskIntoConstraints = false
         highCollectionListView.translatesAutoresizingMaskIntoConstraints = false
-
         middleTitle.translatesAutoresizingMaskIntoConstraints = false
         middleCollectionListView.translatesAutoresizingMaskIntoConstraints = false
-
         rowTitle.translatesAutoresizingMaskIntoConstraints = false
         rowCollectionListView.translatesAutoresizingMaskIntoConstraints = false
 
@@ -156,7 +128,6 @@ class GoalListView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
             highTitle.trailingAnchor.constraint(equalTo: importanceHighView.trailingAnchor),
             highTitle.heightAnchor.constraint(equalToConstant: 20)
         ])
-
         // 오토 레이아웃(highCollectionListView)
         NSLayoutConstraint.activate([
             highCollectionListView.topAnchor.constraint(equalTo: highTitle.bottomAnchor, constant: 10),
@@ -172,7 +143,6 @@ class GoalListView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
             middleTitle.trailingAnchor.constraint(equalTo: importanceMiddleView.trailingAnchor),
             middleTitle.heightAnchor.constraint(equalToConstant: 20)
         ])
-
         // 오토 레이아웃(middleCollectionListView)
         NSLayoutConstraint.activate([
             middleCollectionListView.topAnchor.constraint(equalTo: middleTitle.bottomAnchor, constant: 10),
@@ -188,7 +158,6 @@ class GoalListView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
             rowTitle.trailingAnchor.constraint(equalTo: importanceRowView.trailingAnchor),
             rowTitle.heightAnchor.constraint(equalToConstant: 20)
         ])
-
         // 오토 레이아웃(rowCollectionListView)
         NSLayoutConstraint.activate([
             rowCollectionListView.topAnchor.constraint(equalTo: rowTitle.bottomAnchor, constant: 10),
@@ -203,7 +172,6 @@ class GoalListView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
         view.font = .bodySmallRegular()
         view.textColor = .natural40
     }
-
     func collectionViewList() -> UICollectionView {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -214,7 +182,6 @@ class GoalListView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
         view.dataSource = self
         view.delegate = self
         view.backgroundColor = .clear
-
         return view
     }
 
@@ -235,7 +202,6 @@ class GoalListView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
 
     // MARK: - Data Source
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-
         if collectionView == highCollectionListView {
             if viewModel.highData.count == 0 {
                 return 1
@@ -257,12 +223,10 @@ class GoalListView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
         } else {
             return 0
         }
-
     }
-
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GoalListCell.identifier, for: indexPath) as! GoalListCell
-        
+
         if collectionView == highCollectionListView {
             let model = viewModel.highData[indexPath.item]
             cell.model(with: model)
@@ -273,13 +237,10 @@ class GoalListView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
             let model = viewModel.rowData[indexPath.item]
             cell.model(with: model)
         }
-
         return cell
     }
-
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.frame.width
-
         return CGSize(width: width, height: 120)
     }
 }
