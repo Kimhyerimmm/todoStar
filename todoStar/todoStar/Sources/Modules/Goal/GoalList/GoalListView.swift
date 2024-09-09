@@ -84,12 +84,15 @@ class GoalListView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
         importanceMiddleView.translatesAutoresizingMaskIntoConstraints = false
         importanceRowView.translatesAutoresizingMaskIntoConstraints = false
 
+        // collectionViewHeight
+        let importanceViewHeight = viewHeight()
+
         // importanceHighView 오토 레이아웃
         NSLayoutConstraint.activate([
             importanceHighView.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor, constant: 30),
             importanceHighView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             importanceHighView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
-            importanceHighView.heightAnchor.constraint(equalToConstant: 300)
+            importanceHighView.heightAnchor.constraint(equalToConstant: importanceViewHeight[0] + 30)
         ])
 
         // importanceMiddleView 오토 레이아웃
@@ -97,7 +100,7 @@ class GoalListView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
             importanceMiddleView.topAnchor.constraint(equalTo: importanceHighView.bottomAnchor, constant: 40),
             importanceMiddleView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             importanceMiddleView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
-            importanceMiddleView.heightAnchor.constraint(equalToConstant: 300)
+            importanceMiddleView.heightAnchor.constraint(equalToConstant: importanceViewHeight[1] + 30)
         ])
 
         // importanceRowView 오토 레이아웃
@@ -105,8 +108,8 @@ class GoalListView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
             importanceRowView.topAnchor.constraint(equalTo: importanceMiddleView.bottomAnchor, constant: 40),
             importanceRowView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             importanceRowView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
-            importanceRowView.heightAnchor.constraint(equalToConstant: 300),
-            importanceRowView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -30)
+            importanceRowView.heightAnchor.constraint(equalToConstant: importanceViewHeight[2] + 30),
+            importanceRowView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -50)
         ])
 
         subView()
@@ -142,6 +145,9 @@ class GoalListView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
         rowTitle.translatesAutoresizingMaskIntoConstraints = false
         rowCollectionListView.translatesAutoresizingMaskIntoConstraints = false
 
+        // collectionListHeight
+        let collectionListHeight = viewHeight()
+
         // 오토 레이아웃(highTitle)
         NSLayoutConstraint.activate([
             highTitle.topAnchor.constraint(equalTo: importanceHighView.topAnchor),
@@ -155,7 +161,7 @@ class GoalListView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
             highCollectionListView.topAnchor.constraint(equalTo: highTitle.bottomAnchor, constant: 10),
             highCollectionListView.leadingAnchor.constraint(equalTo: importanceHighView.leadingAnchor),
             highCollectionListView.trailingAnchor.constraint(equalTo: importanceHighView.trailingAnchor),
-            highCollectionListView.heightAnchor.constraint(equalToConstant: (140 * 4) - 20)
+            highCollectionListView.heightAnchor.constraint(equalToConstant: collectionListHeight[0])
         ])
 
         // 오토 레이아웃(middleTitle)
@@ -171,7 +177,7 @@ class GoalListView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
             middleCollectionListView.topAnchor.constraint(equalTo: middleTitle.bottomAnchor, constant: 10),
             middleCollectionListView.leadingAnchor.constraint(equalTo: importanceMiddleView.leadingAnchor),
             middleCollectionListView.trailingAnchor.constraint(equalTo: importanceMiddleView.trailingAnchor),
-            middleCollectionListView.heightAnchor.constraint(equalToConstant: (140 * 4) - 20)
+            middleCollectionListView.heightAnchor.constraint(equalToConstant: collectionListHeight[1])
         ])
 
         // 오토 레이아웃(rowTitle)
@@ -187,7 +193,7 @@ class GoalListView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
             rowCollectionListView.topAnchor.constraint(equalTo: rowTitle.bottomAnchor, constant: 10),
             rowCollectionListView.leadingAnchor.constraint(equalTo: importanceRowView.leadingAnchor),
             rowCollectionListView.trailingAnchor.constraint(equalTo: importanceRowView.trailingAnchor),
-            rowCollectionListView.heightAnchor.constraint(equalToConstant: (140 * 4) - 20)
+            rowCollectionListView.heightAnchor.constraint(equalToConstant: collectionListHeight[2])
         ])
     }
 
@@ -201,7 +207,7 @@ class GoalListView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 20
-        
+
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
         view.register(GoalListCell.self, forCellWithReuseIdentifier: GoalListCell.identifier)
         view.dataSource = self
@@ -209,6 +215,20 @@ class GoalListView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
         view.backgroundColor = .clear
 
         return view
+    }
+
+    func viewHeight() -> [CGFloat] {
+        var cellCounts: [CGFloat] = []
+        let cellModels = [viewModel.highData, viewModel.middleData, viewModel.rowData]
+        for model in cellModels {
+            let count = model.count
+            let height = CGFloat(count * 120)
+            let padding = CGFloat((count - 1) * 20)
+            let heightAll = height + padding
+            cellCounts.append(heightAll)
+        }
+
+        return cellCounts
     }
 
 
