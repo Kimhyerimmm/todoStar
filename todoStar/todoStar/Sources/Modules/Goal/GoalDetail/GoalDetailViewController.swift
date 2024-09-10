@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GoalDetailViewController: UIViewController {
+class GoalDetailViewController: UIViewController, GoalDetailViewDelegate {
 
     // MARK: - Property
     let goalDetailView = GoalDetailView()
@@ -60,5 +60,11 @@ class GoalDetailViewController: UIViewController {
         appearanceBar.backgroundColor = .natural100 // 원하는 색상
         navigationController?.navigationBar.standardAppearance = appearanceBar
         navigationController?.navigationBar.scrollEdgeAppearance = appearanceBar
+    }
+
+    // MARK: - Method
+    // 편집 버튼 액션
+    func didEditButton() {
+        // TODO: 편집 팝업 뜨도록
     }
 }

@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol GoalDetailViewDelegate: AnyObject {
+    func didEditButton()
+}
+
 class GoalDetailView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+
+    weak var delegate: GoalDetailViewDelegate?
 
     // MARK: - Property
     // 데이터모델 연결
@@ -70,6 +76,13 @@ class GoalDetailView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
     }
 
     func setupContentView() {
+        // 데이터 뷰에 넘기기
+        if let viewModel = viewModel,
+           let goalData = viewModel.selecteGoalData.first {
+            titleLastGoalSetup(with: goalData)
+            importanceViewSetup(with: goalData)
+        }
+
         contentView.addSubview(titleLastGoal)
         contentView.addSubview(importanceView)
         contentView.addSubview(progressStatusView)
@@ -93,7 +106,7 @@ class GoalDetailView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
             importanceView.topAnchor.constraint(equalTo: titleLastGoal.bottomAnchor, constant: 20),
             importanceView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             importanceView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
-            importanceView.heightAnchor.constraint(equalToConstant: 96)
+            importanceView.heightAnchor.constraint(equalToConstant: 100)
         ])
 
         // 오토레이아웃(progressStatusView)
@@ -114,22 +127,96 @@ class GoalDetailView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
         ])
 
         */
-        // 데이터 뷰에 넘기기
-        if let viewModel = viewModel,
-           let goalData = viewModel.selecteGoalData.first {
-            titleLastGoalCreate(with: goalData)
-        }
+
+
     }
 
 
     // MARK: - View
-    func titleLastGoalCreate(with model: GoalDetailModel) {
+    // MARK: - viewTitle And editButton
+    func viewTitle(title: String) -> UILabel {
+        let label = UILabel()
+        label.text = title
+        label.font = .bodySmallRegular()
+        label.textColor = .natural40
+
+        return label
+    }
+
+    func viewEditButton() -> UIButton {
+        let button = UIButton(type: .custom)
+        button.setImage(UIImage(named: "storage"), for: .normal)
+        button.addAction(UIAction { _ in
+            self.delegate?.didEditButton()
+        }, for: .touchUpInside)
+
+        return button
+    }
+
+    // MARK: - titleLastGoal
+    func titleLastGoalSetup(with model: GoalDetailModel) {
         titleLastGoal.text = model.lastGoal
         titleLastGoal.font = .subtitleMedium()
         titleLastGoal.textColor = .white
     }
 
-    func middleGoalCollectionViewCreate() -> UICollectionView {
+    // MARK: - importanceView
+    func importanceViewSetup(with model: GoalDetailModel) {
+        importanceView.backgroundColor = .natural90
+        importanceView.layer.cornerRadius = 10
+
+        let title = importanceViewTitle()
+        let importanceText = UILabel()
+        importanceText.text = model.importance
+        importanceText.font = .subtitleMedium()
+        importanceText.textColor = .white
+
+        importanceView.addSubview(title)
+        importanceView.addSubview(importanceText)
+
+        title.translatesAutoresizingMaskIntoConstraints = false
+        importanceText.translatesAutoresizingMaskIntoConstraints = false
+        
+        // 오토레이아웃(title)
+        NSLayoutConstraint.activate([
+            title.topAnchor.constraint(equalTo: importanceView.topAnchor, constant: 20),
+            title.leadingAnchor.constraint(equalTo: importanceView.leadingAnchor, constant: 20),
+            title.trailingAnchor.constraint(equalTo: importanceView.trailingAnchor, constant: -20)
+        ])
+
+        // 오토레이아웃(importanceText)
+        NSLayoutConstraint.activate([
+            importanceText.bottomAnchor.constraint(equalTo: importanceView.bottomAnchor, constant: -20),
+            importanceText.leadingAnchor.constraint(equalTo: importanceView.leadingAnchor, constant: 20),
+            importanceText.trailingAnchor.constraint(equalTo: importanceView.trailingAnchor, constant: -20)
+        ])
+    }
+
+    func importanceViewTitle() -> UIStackView{
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.distribution = .equalSpacing
+
+        let title = viewTitle(title: "중요도")
+        let button = viewEditButton()
+
+        stackView.addArrangedSubview(title)
+        stackView.addArrangedSubview(button)
+
+        return stackView
+    }
+
+
+
+    // MARK: - progresStatusView
+    func progressStatusViewSetup() {
+        progressStatusView.backgroundColor = .natural100
+        progressStatusView.layer.cornerRadius = 10
+    }
+
+
+    // MARK: - middleGoalCollectionView
+    func middleGoalCollectionViewSetup() -> UICollectionView {
         let view = UICollectionView()
 
         return view
@@ -146,7 +233,7 @@ class GoalDetailView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
     // MARK: - Delegate
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = UICollectionViewCell()
-        if let middleGoal = viewModel?.selecteGoalData.first?.middleGoal[indexPath.item] {
+        if (viewModel?.selecteGoalData.first?.middleGoal[indexPath.item]) != nil {
 
         }
 
