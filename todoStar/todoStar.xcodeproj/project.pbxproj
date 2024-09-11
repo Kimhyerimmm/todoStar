@@ -32,7 +32,7 @@
 		BFC7F17E2C80572600EEA14F /* TextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F17D2C80572600EEA14F /* TextField+Extension.swift */; };
 		BFC7F1822C8070AB00EEA14F /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1812C8070AB00EEA14F /* UIViewController+Extension.swift */; };
 		BFC7F1842C815DCA00EEA14F /* DropDownStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1832C815DCA00EEA14F /* DropDownStyle.swift */; };
-		BFC7F1862C834A7300EEA14F /* SegmentedControlStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1852C834A7300EEA14F /* SegmentedControlStyle.swift */; };
+		BFC7F1862C834A7300EEA14F /* SegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1852C834A7300EEA14F /* SegmentedControl.swift */; };
 		BFC7F18C2C84395B00EEA14F /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F18B2C84395B00EEA14F /* DataModel.swift */; };
 		BFC7F1912C849FE700EEA14F /* StorageMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1902C849FE700EEA14F /* StorageMainViewController.swift */; };
 		BFC7F1932C84A00300EEA14F /* RecordMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1922C84A00300EEA14F /* RecordMainViewController.swift */; };
@@ -78,7 +78,7 @@
 		BFC7F17D2C80572600EEA14F /* TextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+Extension.swift"; sourceTree = "<group>"; };
 		BFC7F1812C8070AB00EEA14F /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		BFC7F1832C815DCA00EEA14F /* DropDownStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownStyle.swift; sourceTree = "<group>"; };
-		BFC7F1852C834A7300EEA14F /* SegmentedControlStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlStyle.swift; sourceTree = "<group>"; };
+		BFC7F1852C834A7300EEA14F /* SegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControl.swift; sourceTree = "<group>"; };
 		BFC7F18B2C84395B00EEA14F /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		BFC7F1902C849FE700EEA14F /* StorageMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageMainViewController.swift; sourceTree = "<group>"; };
 		BFC7F1922C84A00300EEA14F /* RecordMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordMainViewController.swift; sourceTree = "<group>"; };
@@ -251,7 +251,7 @@
 				BFC7F1772C7F18ED00EEA14F /* ButtonStyle.swift */,
 				BFC7F17B2C802D0100EEA14F /* TextFieldStyle.swift */,
 				BFC7F1832C815DCA00EEA14F /* DropDownStyle.swift */,
-				BFC7F1852C834A7300EEA14F /* SegmentedControlStyle.swift */,
+				BFC7F1852C834A7300EEA14F /* SegmentedControl.swift */,
 				BFC7F1AA2C85B21100EEA14F /* NavigationBarStyle.swift */,
 				BF1CE6C32C8DA1B3008AE7F7 /* TabBarControllerStyle.swift */,
 			);
@@ -383,7 +383,7 @@
 				BFC7F1962C84A1FB00EEA14F /* ReportMainViewController.swift in Sources */,
 				BFC7F1AB2C85B21100EEA14F /* NavigationBarStyle.swift in Sources */,
 				BFC7F1A92C85B1AB00EEA14F /* UINavigationController+Extenstion.swift in Sources */,
-				BFC7F1862C834A7300EEA14F /* SegmentedControlStyle.swift in Sources */,
+				BFC7F1862C834A7300EEA14F /* SegmentedControl.swift in Sources */,
 				BFC7F1AF2C869C3A00EEA14F /* GoalMainView.swift in Sources */,
 				BFC7F1762C7F0FEE00EEA14F /* UIImage+Extension.swift in Sources */,
 				BF1CE6C02C8AD85A008AE7F7 /* GoalListCell.swift in Sources */,

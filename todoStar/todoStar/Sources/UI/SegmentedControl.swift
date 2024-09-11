@@ -1,5 +1,5 @@
 //
-//  SegmentedControlStyle.swift
+//  SegmentedController.swift
 //  todoStar
 //
 //  Created by 김혜림 on 8/31/24.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SegmentedControlStyle: UISegmentedControl {
+class SegmentedControl: UISegmentedControl {
     private let segmentInset: CGFloat = 3
     private let segmentImage: UIImage? = UIImage(color: UIColor.primary100)
     
@@ -53,8 +53,6 @@ func segmentedContolCreated(to segmentedControl: UISegmentedControl, items: [Str
     segmentedControl.backgroundColor = .natural80
     
     NSLayoutConstraint.activate([
-        segmentedControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-        segmentedControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
         segmentedControl.heightAnchor.constraint(equalToConstant: 60)
     ])
     

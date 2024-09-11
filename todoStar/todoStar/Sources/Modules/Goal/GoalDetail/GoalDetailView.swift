@@ -28,7 +28,7 @@ class GoalDetailView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
     private let scrollView = UIScrollView()
     private let contentView = UIView()
 
-    private let titleLastGoal = UILabel()
+    private let titleLastGoal = UIView()
     private let importanceView = UIView()
     private let progressStatusView = UIView()
     private var middleGoalCollectionView: UICollectionView!
@@ -81,6 +81,7 @@ class GoalDetailView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
            let goalData = viewModel.selecteGoalData.first {
             titleLastGoalSetup(with: goalData)
             importanceViewSetup(with: goalData)
+            progressStatusViewSetup(with: goalData)
         }
 
         contentView.addSubview(titleLastGoal)
@@ -98,7 +99,7 @@ class GoalDetailView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
             titleLastGoal.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor, constant: 50),
             titleLastGoal.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             titleLastGoal.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
-            titleLastGoal.heightAnchor.constraint(equalToConstant: 40)
+            titleLastGoal.heightAnchor.constraint(equalToConstant: 102)
         ])
 
         // 오토레이아웃(importanceView)
@@ -106,12 +107,12 @@ class GoalDetailView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
             importanceView.topAnchor.constraint(equalTo: titleLastGoal.bottomAnchor, constant: 20),
             importanceView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             importanceView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
-            importanceView.heightAnchor.constraint(equalToConstant: 100)
+            importanceView.heightAnchor.constraint(equalToConstant: 102)
         ])
 
         // 오토레이아웃(progressStatusView)
         NSLayoutConstraint.activate([
-            progressStatusView.topAnchor.constraint(equalTo: titleLastGoal.bottomAnchor, constant: 20),
+            progressStatusView.topAnchor.constraint(equalTo: importanceView.bottomAnchor, constant: 20),
             progressStatusView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             progressStatusView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             progressStatusView.heightAnchor.constraint(equalToConstant: 132)
@@ -153,11 +154,52 @@ class GoalDetailView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
         return button
     }
 
+    func viewTitleSet(text: String) -> UIStackView{
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.distribution = .equalSpacing
+
+        let title = viewTitle(title: text)
+        let button = viewEditButton()
+
+        stackView.addArrangedSubview(title)
+        stackView.addArrangedSubview(button)
+
+        return stackView
+    }
+
+
+
     // MARK: - titleLastGoal
     func titleLastGoalSetup(with model: GoalDetailModel) {
-        titleLastGoal.text = model.lastGoal
-        titleLastGoal.font = .subtitleMedium()
-        titleLastGoal.textColor = .white
+        titleLastGoal.backgroundColor = .natural90
+        titleLastGoal.layer.cornerRadius = 10
+
+        let title = viewTitleSet(text: "최종 목표")
+        let titleLastGoalText = UILabel()
+        titleLastGoalText.text = model.lastGoal
+        titleLastGoalText.font = .subtitleMedium()
+        titleLastGoalText.textColor = .white
+
+        titleLastGoal.addSubview(title)
+        titleLastGoal.addSubview(titleLastGoalText)
+
+        title.translatesAutoresizingMaskIntoConstraints = false
+        titleLastGoalText.translatesAutoresizingMaskIntoConstraints = false
+
+        // 오토레이아웃(title)
+        NSLayoutConstraint.activate([
+            title.topAnchor.constraint(equalTo: titleLastGoal.topAnchor, constant: 20),
+            title.leadingAnchor.constraint(equalTo: titleLastGoal.leadingAnchor, constant: 20),
+            title.trailingAnchor.constraint(equalTo: titleLastGoal.trailingAnchor, constant: -20)
+        ])
+
+        // 오토레이아웃(titleLastGoalText)
+        NSLayoutConstraint.activate([
+            titleLastGoalText.bottomAnchor.constraint(equalTo: titleLastGoal.bottomAnchor, constant: -20),
+            titleLastGoalText.leadingAnchor.constraint(equalTo: titleLastGoal.leadingAnchor, constant: 20),
+            titleLastGoalText.trailingAnchor.constraint(equalTo: titleLastGoal.trailingAnchor, constant: -20)
+        ])
     }
 
     // MARK: - importanceView
@@ -165,7 +207,7 @@ class GoalDetailView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
         importanceView.backgroundColor = .natural90
         importanceView.layer.cornerRadius = 10
 
-        let title = importanceViewTitle()
+        let title = viewTitleSet(text: "중요도")
         let importanceText = UILabel()
         importanceText.text = model.importance
         importanceText.font = .subtitleMedium()
@@ -192,27 +234,34 @@ class GoalDetailView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
         ])
     }
 
-    func importanceViewTitle() -> UIStackView{
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.distribution = .equalSpacing
-
-        let title = viewTitle(title: "중요도")
-        let button = viewEditButton()
-
-        stackView.addArrangedSubview(title)
-        stackView.addArrangedSubview(button)
-
-        return stackView
-    }
-
 
 
     // MARK: - progresStatusView
-    func progressStatusViewSetup() {
-        progressStatusView.backgroundColor = .natural100
+    func progressStatusViewSetup(with model: GoalDetailModel) {
+        progressStatusView.backgroundColor = .natural90
         progressStatusView.layer.cornerRadius = 10
+
+        let title = viewTitle(title: "목표 상태")
+
+        progressStatusView.addSubview(title)
+
+        title.translatesAutoresizingMaskIntoConstraints = false
+
+        // 오토레이아웃(title)
+        NSLayoutConstraint.activate([
+            title.topAnchor.constraint(equalTo: progressStatusView.topAnchor, constant: 20),
+            title.leadingAnchor.constraint(equalTo: progressStatusView.leadingAnchor, constant: 20),
+            title.trailingAnchor.constraint(equalTo: progressStatusView.trailingAnchor, constant: -20)
+        ])
+/*
+        // 오토레이아웃(toggle)
+        NSLayoutConstraint.activate([
+            statusToggle.bottomAnchor.constraint(equalTo: progressStatusView.bottomAnchor, constant: -20),
+            statusToggle.leadingAnchor.constraint(equalTo: progressStatusView.leadingAnchor, constant: 20),
+            statusToggle.trailingAnchor.constraint(equalTo: progressStatusView.trailingAnchor, constant: -20)
+        ])*/
     }
+
 
 
     // MARK: - middleGoalCollectionView

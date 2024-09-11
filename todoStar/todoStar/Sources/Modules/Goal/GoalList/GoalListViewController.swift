@@ -52,13 +52,4 @@ class GoalListViewController: UIViewController {
         navigationController?.navigationBar.standardAppearance = appearanceBar
         navigationController?.navigationBar.scrollEdgeAppearance = appearanceBar
     }
-
-    // MARK: - Method
-
-
-    // MARK: - Data Source
-
-
-    // MARK: - Delegate
-
 }
