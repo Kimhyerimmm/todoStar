@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 struct GoalDetailModel {
     let goalId: UUID
@@ -21,7 +22,14 @@ class GoalDetailViewModel {
     private let goalId: UUID
     private var goalData: GoalRecordDataModel?
 
-    var selecteGoalData: [GoalDetailModel] = []
+    @Published var selecteGoalData: [GoalDetailModel] = [] {
+        didSet {
+            if let firstGoal = selecteGoalData.first {
+                isOn = firstGoal.progressStatus
+            }
+        }
+    }
+    @Published var isOn: Bool = false
 
     init(goalId: UUID) {
         self.goalId = goalId
