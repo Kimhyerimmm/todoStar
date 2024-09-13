@@ -249,7 +249,9 @@ class GoalDetailView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
         progressStatusView.layer.cornerRadius = 10
 
         let title = viewTitle(title: "목표 상태")
-        button = CustomSwitchButton(viewModel: viewModel!)
+        button = CustomSwitchButton(viewModel: viewModel!,
+                                    onText: "진행 중",
+                                    offText: "보관 중")
 
         progressStatusView.addSubview(title)
         progressStatusView.addSubview(button)
