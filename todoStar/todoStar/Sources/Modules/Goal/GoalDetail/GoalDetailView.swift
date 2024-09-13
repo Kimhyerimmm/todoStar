@@ -17,12 +17,12 @@ class GoalDetailView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
 
     // MARK: - Property
     // 데이터모델 연결
-    var viewModel: GoalDetailViewModel?
-    init(goalDetailViewModel: GoalDetailViewModel) {
-        self.viewModel = goalDetailViewModel
-        super.init(frame: .zero)
-        setupView()
+    var viewModel: GoalDetailViewModel? {
+        didSet {
+            updateViews()
+        }
     }
+
 
     // 뷰 생성
     private let scrollView = UIScrollView()
@@ -32,6 +32,13 @@ class GoalDetailView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
     private let importanceView = UIView()
     private let progressStatusView = UIView()
     private var middleGoalCollectionView: UICollectionView!
+    private var button: CustomSwitchButton<GoalDetailViewModel>!
+
+    init(goalDetailViewModel: GoalDetailViewModel) {
+        self.viewModel = goalDetailViewModel
+        super.init(frame: .zero)
+        setupView()
+    }
 
 
 
@@ -242,10 +249,13 @@ class GoalDetailView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
         progressStatusView.layer.cornerRadius = 10
 
         let title = viewTitle(title: "목표 상태")
+        button = CustomSwitchButton(viewModel: viewModel!)
 
         progressStatusView.addSubview(title)
+        progressStatusView.addSubview(button)
 
         title.translatesAutoresizingMaskIntoConstraints = false
+        button.translatesAutoresizingMaskIntoConstraints = false
 
         // 오토레이아웃(title)
         NSLayoutConstraint.activate([
@@ -253,13 +263,14 @@ class GoalDetailView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
             title.leadingAnchor.constraint(equalTo: progressStatusView.leadingAnchor, constant: 20),
             title.trailingAnchor.constraint(equalTo: progressStatusView.trailingAnchor, constant: -20)
         ])
-/*
-        // 오토레이아웃(toggle)
+
+        // 오토레이아웃(button)
         NSLayoutConstraint.activate([
-            statusToggle.bottomAnchor.constraint(equalTo: progressStatusView.bottomAnchor, constant: -20),
-            statusToggle.leadingAnchor.constraint(equalTo: progressStatusView.leadingAnchor, constant: 20),
-            statusToggle.trailingAnchor.constraint(equalTo: progressStatusView.trailingAnchor, constant: -20)
-        ])*/
+            button.bottomAnchor.constraint(equalTo: progressStatusView.bottomAnchor, constant: -20),
+            button.leadingAnchor.constraint(equalTo: progressStatusView.leadingAnchor, constant: 20),
+            button.trailingAnchor.constraint(equalTo: progressStatusView.trailingAnchor, constant: -20),
+            button.heightAnchor.constraint(equalToConstant: 60)
+        ])
     }
 
 
@@ -269,6 +280,16 @@ class GoalDetailView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
         let view = UICollectionView()
 
         return view
+    }
+
+
+    // MARK: - Method
+    func updateViews() {
+        if let viewModel = viewModel, let goalData = viewModel.selecteGoalData.first {
+            titleLastGoalSetup(with: goalData)
+            importanceViewSetup(with: goalData)
+            progressStatusViewSetup(with: goalData)
+        }
     }
 
 

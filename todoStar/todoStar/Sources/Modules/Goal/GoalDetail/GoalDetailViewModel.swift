@@ -16,7 +16,7 @@ struct GoalDetailModel {
     let middleGoal: [MiddleGoalDataModel]
 }
 
-class GoalDetailViewModel {
+class GoalDetailViewModel: CustomSwitchButtonProtocol {
     private let shareData = ShareData.shared
 
     private let goalId: UUID

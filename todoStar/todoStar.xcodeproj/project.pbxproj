@@ -15,23 +15,24 @@
 		BF1CE6BD2C8AA352008AE7F7 /* S-CoreDream-5Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = BF1CE6B92C8AA352008AE7F7 /* S-CoreDream-5Medium.otf */; };
 		BF1CE6BE2C8AA352008AE7F7 /* S-CoreDream-4Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = BF1CE6BA2C8AA352008AE7F7 /* S-CoreDream-4Regular.otf */; };
 		BF1CE6C02C8AD85A008AE7F7 /* GoalListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1CE6BF2C8AD85A008AE7F7 /* GoalListCell.swift */; };
-		BF1CE6C42C8DA1B3008AE7F7 /* TabBarControllerStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1CE6C32C8DA1B3008AE7F7 /* TabBarControllerStyle.swift */; };
+		BF1CE6C42C8DA1B3008AE7F7 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1CE6C32C8DA1B3008AE7F7 /* TabBarController.swift */; };
 		BF1CE6CE2C8EDC8A008AE7F7 /* GoalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1CE6CD2C8EDC8A008AE7F7 /* GoalDetailViewController.swift */; };
 		BF1CE6D02C8EDC9A008AE7F7 /* GoalDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1CE6CF2C8EDC9A008AE7F7 /* GoalDetailView.swift */; };
 		BF1CE6D22C8EDCA7008AE7F7 /* GoalDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1CE6D12C8EDCA7008AE7F7 /* GoalDetailViewModel.swift */; };
 		BF1CE6D42C8F135B008AE7F7 /* GoalDetailMiddleGoalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1CE6D32C8F135B008AE7F7 /* GoalDetailMiddleGoalCell.swift */; };
+		BFA91E2F2C92CCA100446246 /* SwitchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA91E2E2C92CCA100446246 /* SwitchButton.swift */; };
 		BFC7F13E2C7EECB100EEA14F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F13D2C7EECB100EEA14F /* AppDelegate.swift */; };
 		BFC7F1402C7EECB100EEA14F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F13F2C7EECB100EEA14F /* SceneDelegate.swift */; };
 		BFC7F1422C7EECB100EEA14F /* GoalMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1412C7EECB100EEA14F /* GoalMainViewController.swift */; };
 		BFC7F1472C7EECB300EEA14F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFC7F1462C7EECB300EEA14F /* Assets.xcassets */; };
 		BFC7F14A2C7EECB300EEA14F /* Base in Resources */ = {isa = PBXBuildFile; fileRef = BFC7F1492C7EECB300EEA14F /* Base */; };
 		BFC7F1762C7F0FEE00EEA14F /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1752C7F0FEE00EEA14F /* UIImage+Extension.swift */; };
-		BFC7F1782C7F18ED00EEA14F /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1772C7F18ED00EEA14F /* ButtonStyle.swift */; };
+		BFC7F1782C7F18ED00EEA14F /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1772C7F18ED00EEA14F /* Buttons.swift */; };
 		BFC7F17A2C800CE500EEA14F /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1792C800CE500EEA14F /* UIFont+Extension.swift */; };
-		BFC7F17C2C802D0100EEA14F /* TextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F17B2C802D0100EEA14F /* TextFieldStyle.swift */; };
+		BFC7F17C2C802D0100EEA14F /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F17B2C802D0100EEA14F /* TextField.swift */; };
 		BFC7F17E2C80572600EEA14F /* TextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F17D2C80572600EEA14F /* TextField+Extension.swift */; };
 		BFC7F1822C8070AB00EEA14F /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1812C8070AB00EEA14F /* UIViewController+Extension.swift */; };
-		BFC7F1842C815DCA00EEA14F /* DropDownStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1832C815DCA00EEA14F /* DropDownStyle.swift */; };
+		BFC7F1842C815DCA00EEA14F /* DropDownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1832C815DCA00EEA14F /* DropDownMenu.swift */; };
 		BFC7F1862C834A7300EEA14F /* SegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1852C834A7300EEA14F /* SegmentedControl.swift */; };
 		BFC7F18C2C84395B00EEA14F /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F18B2C84395B00EEA14F /* DataModel.swift */; };
 		BFC7F1912C849FE700EEA14F /* StorageMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1902C849FE700EEA14F /* StorageMainViewController.swift */; };
@@ -42,7 +43,7 @@
 		BFC7F1A32C8574E300EEA14F /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1A22C8574E300EEA14F /* DataController.swift */; };
 		BFC7F1A52C8597C100EEA14F /* ShareData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1A42C8597C100EEA14F /* ShareData.swift */; };
 		BFC7F1A92C85B1AB00EEA14F /* UINavigationController+Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1A82C85B1AB00EEA14F /* UINavigationController+Extenstion.swift */; };
-		BFC7F1AB2C85B21100EEA14F /* NavigationBarStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1AA2C85B21100EEA14F /* NavigationBarStyle.swift */; };
+		BFC7F1AB2C85B21100EEA14F /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1AA2C85B21100EEA14F /* NavigationBar.swift */; };
 		BFC7F1AD2C85C03700EEA14F /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1AC2C85C03700EEA14F /* NotificationViewController.swift */; };
 		BFC7F1AF2C869C3A00EEA14F /* GoalMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1AE2C869C3A00EEA14F /* GoalMainView.swift */; };
 		BFC7F1B12C869C7300EEA14F /* GoalMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F1B02C869C7300EEA14F /* GoalMainViewModel.swift */; };
@@ -59,11 +60,12 @@
 		BF1CE6B92C8AA352008AE7F7 /* S-CoreDream-5Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "S-CoreDream-5Medium.otf"; sourceTree = "<group>"; };
 		BF1CE6BA2C8AA352008AE7F7 /* S-CoreDream-4Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "S-CoreDream-4Regular.otf"; sourceTree = "<group>"; };
 		BF1CE6BF2C8AD85A008AE7F7 /* GoalListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalListCell.swift; sourceTree = "<group>"; };
-		BF1CE6C32C8DA1B3008AE7F7 /* TabBarControllerStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarControllerStyle.swift; sourceTree = "<group>"; };
+		BF1CE6C32C8DA1B3008AE7F7 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		BF1CE6CD2C8EDC8A008AE7F7 /* GoalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalDetailViewController.swift; sourceTree = "<group>"; };
 		BF1CE6CF2C8EDC9A008AE7F7 /* GoalDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalDetailView.swift; sourceTree = "<group>"; };
 		BF1CE6D12C8EDCA7008AE7F7 /* GoalDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalDetailViewModel.swift; sourceTree = "<group>"; };
 		BF1CE6D32C8F135B008AE7F7 /* GoalDetailMiddleGoalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalDetailMiddleGoalCell.swift; sourceTree = "<group>"; };
+		BFA91E2E2C92CCA100446246 /* SwitchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchButton.swift; sourceTree = "<group>"; };
 		BFC7F13A2C7EECB100EEA14F /* todoStar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = todoStar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFC7F13D2C7EECB100EEA14F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFC7F13F2C7EECB100EEA14F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,12 +74,12 @@
 		BFC7F1492C7EECB300EEA14F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BFC7F14B2C7EECB300EEA14F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFC7F1752C7F0FEE00EEA14F /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
-		BFC7F1772C7F18ED00EEA14F /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
+		BFC7F1772C7F18ED00EEA14F /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		BFC7F1792C800CE500EEA14F /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
-		BFC7F17B2C802D0100EEA14F /* TextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldStyle.swift; sourceTree = "<group>"; };
+		BFC7F17B2C802D0100EEA14F /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		BFC7F17D2C80572600EEA14F /* TextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+Extension.swift"; sourceTree = "<group>"; };
 		BFC7F1812C8070AB00EEA14F /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
-		BFC7F1832C815DCA00EEA14F /* DropDownStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownStyle.swift; sourceTree = "<group>"; };
+		BFC7F1832C815DCA00EEA14F /* DropDownMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownMenu.swift; sourceTree = "<group>"; };
 		BFC7F1852C834A7300EEA14F /* SegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControl.swift; sourceTree = "<group>"; };
 		BFC7F18B2C84395B00EEA14F /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		BFC7F1902C849FE700EEA14F /* StorageMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageMainViewController.swift; sourceTree = "<group>"; };
@@ -88,7 +90,7 @@
 		BFC7F1A22C8574E300EEA14F /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		BFC7F1A42C8597C100EEA14F /* ShareData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareData.swift; sourceTree = "<group>"; };
 		BFC7F1A82C85B1AB00EEA14F /* UINavigationController+Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extenstion.swift"; sourceTree = "<group>"; };
-		BFC7F1AA2C85B21100EEA14F /* NavigationBarStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarStyle.swift; sourceTree = "<group>"; };
+		BFC7F1AA2C85B21100EEA14F /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		BFC7F1AC2C85C03700EEA14F /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		BFC7F1AE2C869C3A00EEA14F /* GoalMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalMainView.swift; sourceTree = "<group>"; };
 		BFC7F1B02C869C7300EEA14F /* GoalMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalMainViewModel.swift; sourceTree = "<group>"; };
@@ -248,12 +250,13 @@
 		BFC7F1582C7EF01700EEA14F /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				BFC7F1772C7F18ED00EEA14F /* ButtonStyle.swift */,
-				BFC7F17B2C802D0100EEA14F /* TextFieldStyle.swift */,
-				BFC7F1832C815DCA00EEA14F /* DropDownStyle.swift */,
+				BFC7F1772C7F18ED00EEA14F /* Buttons.swift */,
+				BFC7F17B2C802D0100EEA14F /* TextField.swift */,
+				BFC7F1832C815DCA00EEA14F /* DropDownMenu.swift */,
 				BFC7F1852C834A7300EEA14F /* SegmentedControl.swift */,
-				BFC7F1AA2C85B21100EEA14F /* NavigationBarStyle.swift */,
-				BF1CE6C32C8DA1B3008AE7F7 /* TabBarControllerStyle.swift */,
+				BFC7F1AA2C85B21100EEA14F /* NavigationBar.swift */,
+				BF1CE6C32C8DA1B3008AE7F7 /* TabBarController.swift */,
+				BFA91E2E2C92CCA100446246 /* SwitchButton.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -377,11 +380,11 @@
 				BFC7F1B32C87032A00EEA14F /* CurrentGoalListCell.swift in Sources */,
 				BFC7F1822C8070AB00EEA14F /* UIViewController+Extension.swift in Sources */,
 				BF1CE6D22C8EDCA7008AE7F7 /* GoalDetailViewModel.swift in Sources */,
-				BF1CE6C42C8DA1B3008AE7F7 /* TabBarControllerStyle.swift in Sources */,
+				BF1CE6C42C8DA1B3008AE7F7 /* TabBarController.swift in Sources */,
 				BFC7F17A2C800CE500EEA14F /* UIFont+Extension.swift in Sources */,
 				BFC7F1422C7EECB100EEA14F /* GoalMainViewController.swift in Sources */,
 				BFC7F1962C84A1FB00EEA14F /* ReportMainViewController.swift in Sources */,
-				BFC7F1AB2C85B21100EEA14F /* NavigationBarStyle.swift in Sources */,
+				BFC7F1AB2C85B21100EEA14F /* NavigationBar.swift in Sources */,
 				BFC7F1A92C85B1AB00EEA14F /* UINavigationController+Extenstion.swift in Sources */,
 				BFC7F1862C834A7300EEA14F /* SegmentedControl.swift in Sources */,
 				BFC7F1AF2C869C3A00EEA14F /* GoalMainView.swift in Sources */,
@@ -392,11 +395,11 @@
 				BFC7F19D2C84AA7800EEA14F /* UIView+Extension.swift in Sources */,
 				BF1CE6CE2C8EDC8A008AE7F7 /* GoalDetailViewController.swift in Sources */,
 				BFC7F18C2C84395B00EEA14F /* DataModel.swift in Sources */,
-				BFC7F1842C815DCA00EEA14F /* DropDownStyle.swift in Sources */,
+				BFC7F1842C815DCA00EEA14F /* DropDownMenu.swift in Sources */,
 				BF1CE6B62C889296008AE7F7 /* GoalListViewModel.swift in Sources */,
 				BFC7F1AD2C85C03700EEA14F /* NotificationViewController.swift in Sources */,
 				BF1CE6B42C889280008AE7F7 /* GoalListView.swift in Sources */,
-				BFC7F1782C7F18ED00EEA14F /* ButtonStyle.swift in Sources */,
+				BFC7F1782C7F18ED00EEA14F /* Buttons.swift in Sources */,
 				BFC7F13E2C7EECB100EEA14F /* AppDelegate.swift in Sources */,
 				BFC7F17E2C80572600EEA14F /* TextField+Extension.swift in Sources */,
 				BFC7F1A32C8574E300EEA14F /* DataController.swift in Sources */,
@@ -405,10 +408,11 @@
 				BF1CE6B22C88926E008AE7F7 /* GoalListViewController.swift in Sources */,
 				BFC7F1A52C8597C100EEA14F /* ShareData.swift in Sources */,
 				BFC7F1932C84A00300EEA14F /* RecordMainViewController.swift in Sources */,
+				BFA91E2F2C92CCA100446246 /* SwitchButton.swift in Sources */,
 				BFC7F1B12C869C7300EEA14F /* GoalMainViewModel.swift in Sources */,
 				BF1CE6D42C8F135B008AE7F7 /* GoalDetailMiddleGoalCell.swift in Sources */,
 				BFC7F1B52C87375400EEA14F /* UILabel+Extension.swift in Sources */,
-				BFC7F17C2C802D0100EEA14F /* TextFieldStyle.swift in Sources */,
+				BFC7F17C2C802D0100EEA14F /* TextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
