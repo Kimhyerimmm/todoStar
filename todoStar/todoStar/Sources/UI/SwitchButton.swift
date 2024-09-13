@@ -25,11 +25,15 @@ class CustomSwitchButton<ViewModel: CustomSwitchButtonProtocol>: UIControl {
 
     var onText: String
     var offText: String
+    var onLabel: UILabel
+    var offLabel: UILabel
 
     init(viewModel: ViewModel, onText: String, offText: String) {
         self.viewModel = viewModel
         self.onText = onText
         self.offText = offText
+        self.onLabel = UILabel()
+        self.offLabel = UILabel()
 
         super.init(frame: .zero)
         setupView()
@@ -68,8 +72,6 @@ class CustomSwitchButton<ViewModel: CustomSwitchButtonProtocol>: UIControl {
         // 오토레이아웃(selectView)
         NSLayoutConstraint.activate([
             selectView.topAnchor.constraint(equalTo: self.topAnchor),
-            selectView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            selectView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             selectView.widthAnchor.constraint(equalTo: barView.widthAnchor, multiplier: 0.5),
             selectView.heightAnchor.constraint(equalToConstant: 60)
         ])
@@ -83,39 +85,48 @@ class CustomSwitchButton<ViewModel: CustomSwitchButtonProtocol>: UIControl {
         ])
     }
 
-    func updateSwitchStatus() {
-
-    }
-
     private func textViewSetup() {
-        let onLabel = UILabel()
         onLabel.text = onText
         onLabel.textAlignment = .center
-        onLabel.translatesAutoresizingMaskIntoConstraints = false
-        if viewModel.isOn {
-            onLabel.font = .boldSystemFont(ofSize: 16)
-            onLabel.textColor = .white
-        } else {
-            onLabel.font = .systemFont(ofSize: 16)
-            onLabel.textColor = .gray
-        }
 
-        let offLabel = UILabel()
         offLabel.text = offText
         offLabel.textAlignment = .center
+
+        onLabel.translatesAutoresizingMaskIntoConstraints = false
         offLabel.translatesAutoresizingMaskIntoConstraints = false
-        if viewModel.isOn {
-            offLabel.font = .systemFont(ofSize: 16)
-            offLabel.textColor = .gray
-        } else {
-            offLabel.font = .boldSystemFont(ofSize: 16)
-            offLabel.textColor = .white
-        }
 
         textView.addArrangedSubview(onLabel)
         textView.addArrangedSubview(offLabel)
 
         textView.axis = .horizontal
         textView.distribution = .fillEqually
+    }
+
+    private func updateSwitchStatus() {
+        if viewModel.isOn {
+            // textView Change
+            onLabel.font = .boldSystemFont(ofSize: 16)
+            onLabel.textColor = .white
+
+            offLabel.font = .systemFont(ofSize: 16)
+            offLabel.textColor = .gray
+            
+            // selectView Change
+            NSLayoutConstraint.activate([
+                selectView.leadingAnchor.constraint(equalTo: self.leadingAnchor)
+            ])
+        } else {
+            // textView Change
+            onLabel.font = .systemFont(ofSize: 16)
+            onLabel.textColor = .gray
+
+            offLabel.font = .boldSystemFont(ofSize: 16)
+            offLabel.textColor = .white
+
+            // selectView Change
+            NSLayoutConstraint.activate([
+                selectView.trailingAnchor.constraint(equalTo: self.trailingAnchor)
+            ])
+        }
     }
 }
