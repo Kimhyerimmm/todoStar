@@ -10,11 +10,11 @@ import UIKit
 class GoalDetailViewController: UIViewController, GoalDetailViewDelegate {
 
     // MARK: - Property
-    let goalDetailView = GoalDetailView()
-    let goalDetailViewModel: GoalDetailViewModel
+    let setView = GoalDetailView()
+    let viewModel: GoalDetailViewModel
 
     init(goalDetailViewModel: GoalDetailViewModel) {
-        self.goalDetailViewModel = goalDetailViewModel
+        self.viewModel = goalDetailViewModel
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -25,7 +25,7 @@ class GoalDetailViewController: UIViewController, GoalDetailViewDelegate {
 
     // MARK: - Life Cycle
     override func loadView() {
-        self.view = GoalDetailView(goalDetailViewModel: goalDetailViewModel)
+        self.view = GoalDetailView(goalDetailViewModel: viewModel)
     }
 
     override func viewDidLoad() {
@@ -60,6 +60,25 @@ class GoalDetailViewController: UIViewController, GoalDetailViewDelegate {
         appearanceBar.backgroundColor = .natural100 // 원하는 색상
         navigationController?.navigationBar.standardAppearance = appearanceBar
         navigationController?.navigationBar.scrollEdgeAppearance = appearanceBar
+        
+//        var button: CustomSwitchButton<GoalDetailViewModel>!
+//        button = CustomSwitchButton(viewModel: viewModel,
+//                                    onText: "진행 중",
+//                                    offText: "보관 중",
+//                                    parentView: view)
+//
+//        view.addSubview(button)
+//
+//        button.translatesAutoresizingMaskIntoConstraints = false
+//
+//
+//        // 오토레이아웃(button)
+//        NSLayoutConstraint.activate([
+//            button.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100),
+//            button.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+//            button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+//            button.heightAnchor.constraint(equalToConstant: 60)
+//        ])
     }
 
     // MARK: - Method

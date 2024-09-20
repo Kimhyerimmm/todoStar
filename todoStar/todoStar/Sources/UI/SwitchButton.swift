@@ -11,7 +11,7 @@ protocol CustomSwitchButtonProtocol {
     var isOn: Bool { get set }
 }
 
-class CustomSwitchButton<ViewModel: CustomSwitchButtonProtocol>: UIControl {
+class CustomSwitchButton<ViewModel: CustomSwitchButtonProtocol>: UIView {
     // MARK: - Property
     var viewModel: ViewModel {
         didSet {
@@ -28,15 +28,21 @@ class CustomSwitchButton<ViewModel: CustomSwitchButtonProtocol>: UIControl {
     var onLabel: UILabel
     var offLabel: UILabel
 
-    init(viewModel: ViewModel, onText: String, offText: String) {
+    var parentView: UIView
+
+
+    init(viewModel: ViewModel, onText: String, offText: String, parentView: UIView) {
         self.viewModel = viewModel
         self.onText = onText
         self.offText = offText
         self.onLabel = UILabel()
         self.offLabel = UILabel()
+        self.parentView = parentView
 
         super.init(frame: .zero)
         setupView()
+        setupGesture()
+        updateSwitchStatus()
     }
 
     required init?(coder: NSCoder) {
@@ -45,6 +51,8 @@ class CustomSwitchButton<ViewModel: CustomSwitchButtonProtocol>: UIControl {
 
     // MARK: - Setup View
     func setupView() {
+        isUserInteractionEnabled = true
+
         barView.backgroundColor = .natural80
         barView.layer.cornerRadius = 30
 
@@ -110,8 +118,9 @@ class CustomSwitchButton<ViewModel: CustomSwitchButtonProtocol>: UIControl {
 
             offLabel.font = .systemFont(ofSize: 16)
             offLabel.textColor = .gray
-            
-            // selectView Change
+
+            // selectView
+            selectView.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
                 selectView.leadingAnchor.constraint(equalTo: self.leadingAnchor)
             ])
@@ -123,10 +132,23 @@ class CustomSwitchButton<ViewModel: CustomSwitchButtonProtocol>: UIControl {
             offLabel.font = .boldSystemFont(ofSize: 16)
             offLabel.textColor = .white
 
-            // selectView Change
+            // selectView
+            selectView.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
                 selectView.trailingAnchor.constraint(equalTo: self.trailingAnchor)
             ])
         }
+    }
+
+    private func setupGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(toggleSwitch))
+        parentView.addGestureRecognizer(tapGesture)
+        print("Gesture Recognizer Set Up")
+    }
+
+    @objc private func toggleSwitch() {
+        viewModel.isOn.toggle()
+        updateSwitchStatus()
+        print("Tap Recognized")
     }
 }

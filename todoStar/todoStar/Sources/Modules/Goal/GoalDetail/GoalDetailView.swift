@@ -245,13 +245,15 @@ class GoalDetailView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
 
     // MARK: - progresStatusView
     func progressStatusViewSetup(with model: GoalDetailModel) {
+        progressStatusView.isUserInteractionEnabled = true
         progressStatusView.backgroundColor = .natural90
         progressStatusView.layer.cornerRadius = 10
 
         let title = viewTitle(title: "목표 상태")
         button = CustomSwitchButton(viewModel: viewModel!,
                                     onText: "진행 중",
-                                    offText: "보관 중")
+                                    offText: "보관 중",
+                                    parentView: progressStatusView)
 
         progressStatusView.addSubview(title)
         progressStatusView.addSubview(button)
